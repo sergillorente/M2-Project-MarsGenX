@@ -56,7 +56,7 @@ app.use("/auth", authRouter);
 app.use("/", siteRouter);
 
 /* GET home page. */
-router.get("/", (req, res, next) => {
+app.get("/", (req, res, next) => {
   res.render("Home");
 });
 
