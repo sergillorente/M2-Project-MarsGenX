@@ -1,5 +1,5 @@
-var express = require("express");
-var siteRouter = express.Router();
+const express = require("express");
+const siteRouter = express.Router();
 
 // Your routes
 
