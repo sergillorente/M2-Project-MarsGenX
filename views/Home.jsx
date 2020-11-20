@@ -3,7 +3,7 @@ const Layout = require("./Layout");
 
 function Home() {
   return (
-    <Layout>
+    <Layout title="Home">
       
     </Layout>
   );

@@ -3,7 +3,7 @@ const Layout = require('./Layout')
 
 function Donation() {
   return (
-    <Layout>
+    <Layout title="Donation">
 
     </Layout>
   )

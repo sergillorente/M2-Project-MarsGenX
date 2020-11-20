@@ -4,11 +4,11 @@ const Layout = require('./Layout')
 
 function Signup(props) {
   return (
-    <Layout> {/*props.title */} 
-      <form id="form-signup" action="auth/signup" method="POST">
+    <Layout title="Signup">  
+      <form id="form-signup" action="auth/signup" method="POST" encType="multipart/form-data">
         <label>Email: </label>
           <br/>
-          <input type='email' name="email" placeholder="Your email here" />
+          <input type='email' name="email" placeholder="Your email goes here" />
           <br/> 
 
         <label>Password: </label>
@@ -16,6 +16,11 @@ function Signup(props) {
           <input type="password" name="password" placeholder="*******" />
           <br />
 
+          <label>Profile picture: </label>
+          <br/>
+          <input type="file" name="profilepic"/>
+          <br />
+          
         <button type="submit" className="signup-button">Create your account</button>
 
           {
@@ -23,6 +28,9 @@ function Signup(props) {
           ? <div className = "error-message">{props.errorMessage}</div>
           : null
           }
+          <p className="account-message">
+                Do you already have an account? <a href="/auth/login">Log in</a>
+          </p>
 
       </form>
 

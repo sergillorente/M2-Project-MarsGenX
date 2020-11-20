@@ -8,7 +8,6 @@ function Layout(props) {
         <title> {props.title} </title>
         <link rel="stylesheet" href="/stylesheets/style.css" />
       </head>
-
       <body>{props.children}</body>
     </html>
   );
