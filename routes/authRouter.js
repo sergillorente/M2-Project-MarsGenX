@@ -86,8 +86,24 @@ authRouter.post('/login', (req, res, next) => {
     const {email: email, password: password} = req.body
 
     if (email === '' || password === '') {
+
         res.render('Login', props)
+        return;
     }
+
+    Member.findOne({email})
+        .then((email) => {
+            if (!email) {
+
+                 // If the user by the given email was not found, send error message
+                const props = {errorMessage: 'The user does not exist'}
+
+                res.render('Login', props)
+                return;
+            }
+        })
+            
+
 })
 
 
