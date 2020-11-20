@@ -16,10 +16,13 @@ function Signup(props) {
           <input type="password" name="password" placeholder="*******" />
           <br />
 
-        <button type="submit" class="signup-button">Create your account</button>
+        <button type="submit" className="signup-button">Create your account</button>
 
-          // here goes the prop.errorMessage
-        
+          {
+            props.errorMessage
+          ? <div className = "error-message">{props.errorMessage}</div>
+          : null
+          }
 
       </form>
 

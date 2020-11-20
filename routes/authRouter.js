@@ -73,11 +73,11 @@ authRouter.post('/signup', (req, res, next) => {
 
 // this route will render the Login form (page)
 
-authRouter.get()
+// authRouter.get()
 
 // this route will update the data in the DB
 
-authRouter.post()
+// authRouter.post()
 
 
 
