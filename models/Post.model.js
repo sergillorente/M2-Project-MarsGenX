@@ -17,7 +17,7 @@ const postSchema = new Schema (
         "creator": { type: mongoose.SchemaTypes.ObjectId, ref: "Member" },
         "donations":  [ { type: mongoose.SchemaTypes.ObjectId, ref: "Member" } ]
     }
-    )
+)
     
     
     
