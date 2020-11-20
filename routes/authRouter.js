@@ -92,7 +92,7 @@ authRouter.post('/login', (req, res, next) => {
     }
 
     Member.findOne({email})
-        .then((email) => {
+        .then((member) => {
             if (!email) {
 
                  // If the user by the given email was not found, send error message
@@ -101,19 +101,21 @@ authRouter.post('/login', (req, res, next) => {
                 res.render('Login', props)
                 return;
             }
+            const passwordCorrect = bcrypt.compareSync(password, member.password);
+
+            if (passwordCorrect) {
+            // Create the session - which also triggers the creation of the cookie
+            req.session.currentMember = member;
+
+            res.redirect('/member'); // needs revision for the route. The route name may change
+            }
+            else {
+            res.render('Login', { errorMessage: "Incorrect password" } );
+            }
         })
             
 
 })
-
-
-// this route will render the Login form (page)
-
-// authRouter.get()
-
-// this route will update the data in the DB
-
-// authRouter.post()
 
 
 
