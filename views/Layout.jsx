@@ -5,8 +5,8 @@ function Layout(props) {
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <title> {props.title ? props.title : "My App"} </title>
-        <link rel="stylesheet" href="/stylesheets/style.css" />
+        <title> {props.title} </title>
+        <link rel="stylesheet" href=".././public/stylesheets/style.css" />
       </head>
 
       <body>{props.children}</body>
