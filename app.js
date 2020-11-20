@@ -60,4 +60,8 @@ app.get("/", (req, res, next) => {
   res.render("Home");
 });
 
+// export the server
+
 module.exports = app;
+
+
