@@ -7,6 +7,7 @@ const parser = require('./../config/cloudinary');
 const bcrypt = require('bcrypt');
 const Member = require('../models/Member.model');
 const zxcvbn = require('zxcvbn');
+const { isValidObjectId } = require("mongoose");
 
 // Here we need to create the isLoggedIn js file
 

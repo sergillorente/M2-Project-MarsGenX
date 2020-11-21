@@ -10,7 +10,6 @@ const memberSchema = new Schema (
         "greeting": String, 
         "points": {type: Number, min: 0, default: 0 },
         "status": { type: String, enum: ['silver', 'gold', 'diamond' ] },
-        "posts": [  { type: mongoose.SchemaTypes.ObjectId, ref: 'Post' }  ],
         "image": String
     }
 )

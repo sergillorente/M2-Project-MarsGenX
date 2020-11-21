@@ -7,11 +7,10 @@ const postSchema = new Schema (
         "text": String,
         "likes": [ { type: mongoose.SchemaTypes.ObjectId, ref: "Member" }  ],
         "image": String,
-        "shares": [ { type: mongoose.SchemaTypes.ObjectId, ref: "Member" }  ],
         "comments": [
             {
                 member: { type: mongoose.SchemaTypes.ObjectId, ref: "Member" },
-                comment: String
+                comment: [String],
             }
         ],
         "creator": { type: mongoose.SchemaTypes.ObjectId, ref: "Member" },

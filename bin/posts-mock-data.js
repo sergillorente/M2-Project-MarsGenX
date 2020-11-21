@@ -4,7 +4,6 @@ const posts = [
         "text": String,
         "likes": [ { type: mongoose.SchemaTypes.ObjectId, ref: "Member" }  ],
         "image": String,
-        "shares": [ { type: mongoose.SchemaTypes.ObjectId, ref: "Member" }  ],
         "comments": [
             {
                 member: { type: mongoose.SchemaTypes.ObjectId, ref: "Member" },
