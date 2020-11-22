@@ -41,15 +41,16 @@ function Member() {
             <img href="./../public/images/sentinel6-inorbit.jpg" alt="Sentinel in orbit" />
           </aside>
 
-          <label for="Comment">Share your thoughts:</label>
-            <br/>
-            <input type="text" name="post-dropdown">
-            </input>
-            <br/>
-            <button type="submit"></button> {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
-            <button type="reset"></button> {/*Button to reset the content of what you were trying to write*/}
-            <button></button> {/*Button to redirect you to the donation page*/}
-
+          <form id="article-form" action="member" method="POST">
+            <label for="Comment">Share your thoughts:</label>
+              <br/>
+              <input type="text" name="post-dropdown">
+              </input>
+              <br/>
+              <button type="submit"></button> {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
+              <button type="reset"></button> {/*Button to reset the content of what you were trying to write*/}
+              <button></button> {/*Button to redirect you to the donation page*/}
+          </form>
           
         </article>
 
@@ -72,15 +73,17 @@ function Member() {
             <img href="./../public/images/Yoda.jpg" alt="Yoda meeting gravity 0"/>
           </aside>
           
-          <label for="Comment">Share your thoughts:</label>
-            <br/>
-            <input type="text" name="post-dropdown">
-            </input>
-            <br/>
-            <button type="submit">Add comment</button> {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
-            <button type="reset">Reset</button> {/*Button to reset the content of what you were trying to write*/}
-            <button type="button">Donate</button> {/*Button to redirect you to the donation page*/}
-            
+          <form id="article-form" action="member" method="POST">
+            <label for="Comment">Share your thoughts:</label>
+              <br/>
+              <input type="text" name="post-dropdown">
+              </input>
+              <br/>
+              <button type="submit"></button> {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
+              <button type="reset"></button> {/*Button to reset the content of what you were trying to write*/}
+              <button></button> {/*Button to redirect you to the donation page*/}
+          </form>
+
         </article>
 
         <article>
@@ -102,14 +105,16 @@ function Member() {
             <img href="./../public/images/Rocket.jpg" alt="Rocket to depart"/>
           </aside>
 
-          <label for="Comment">Share your thoughts:</label>
-            <br/>
-            <input type="text" name="post-dropdown">
-            </input>
-            <br/>
-            <button type="submit">Add comment</button> {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
-            <button type="reset">Reset</button> {/*Button to reset the content of what you were trying to write*/}
-            <button type="button">Donate</button> {/*Button to redirect you to the donation page*/}
+          <form id="article-form" action="member" method="POST">
+            <label for="Comment">Share your thoughts:</label>
+              <br/>
+              <input type="text" name="post-dropdown">
+              </input>
+              <br/>
+              <button type="submit"></button> {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
+              <button type="reset"></button> {/*Button to reset the content of what you were trying to write*/}
+              <button></button> {/*Button to redirect you to the donation page*/}
+          </form>  
 
         </article>
         
@@ -119,14 +124,17 @@ function Member() {
             <h3>Community Posts</h3>
           </div>
 
-          <label for="Comment">Share your thoughts:</label>
-            <br/>
-            <input type="text" name="post-dropdown">
-            </input>
-            <br/>
-            <button type="submit">Add comment</button> {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
-            <button type="reset">Reset</button> {/*Button to reset the content of what you were trying to write*/}
-            <button type="button">Donate</button> {/*Button to redirect you to the donation page*/}
+          <form id="member-post-form" action="member" method="POST">
+            <label for="Comment">Share your thoughts:</label>
+              <br/>
+              <input type="text" name="post-dropdown">
+              </input>
+              <br/>
+              <button type="submit">Add comment</button> {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
+              <button type="reset">Reset</button> {/*Button to reset the content of what you were trying to write*/}
+              <button type="button">Donate</button> {/*Button to redirect you to the donation page*/}
+          </form>
+          
 
         </div>
 
