@@ -6,37 +6,43 @@ const Layout = require('./Layout')
 function Profile() {
   return (
     <Layout title="Profile">
-<header>
-  <img href="../public/images/main-logo.png" />
- </header>
-<h1>Profile settings</h1>
-<form id="form-setting" action="edit" method="POST" encType="multipart/form-data">
+      <header>
+        <img href="../public/images/main-logo.png" />
+      </header>
+      
+      <h1>Profile settings</h1>
+      <form id="form-setting" action="edit" method="POST" encType="multipart/form-data">
 
-<label>Nicknamee</label>
-<input type='Nickname' name="Nickname" placeholder="Edit your Nickname" />
+      <label>Nickname:</label>
+      <br/>
+      <input type='Nickname' name="Nickname" placeholder="Edit your Nickname" />
+      <br/>
 
-<label>Email </label>
-<input type='email' name="email" placeholder="Modify your email" />
+      <label>Email:</label>
+      <br/>
+      <input type='email' name="email" placeholder="Modify your email" />
+      <br/>
 
-<label>Greetings</label>
-<input type='text' name="text" placeholder="choose your greeting" />
+      <label>Greetings:</label>
+      <br/>
+      <input type='text' name="text" placeholder="Choose your greeting" />
+      <br/>
 
-<label>Image</label>
-<input type="file" name="profilepic"/>
+      <label>Profile picture:</label>
+      <br/>
+      <input type="file" name="profilepic"/>
+      <br/>
 
-<button type="submit" className="signup-button">Edit your account</button>
-
-
-{
-            props.errorMessage
-          ? <div className = "error-message">{props.errorMessage}</div>
-          : null
-          }
-
-</form>
-
+      <button type="submit" className="signup-button">Edit your account</button>
 
 
+      {
+        props.errorMessage
+        ? <div className = "error-message">{props.errorMessage}</div>
+        : null
+      }
+
+      </form>
 
     </Layout>
   )
