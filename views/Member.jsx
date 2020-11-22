@@ -44,8 +44,9 @@ function Member() {
 
             <button type="button">Comment</button>{/*We need to create an action to allow this button to dropdown the form*/}
               <form id="article-form" action="member" method="POST"> {/* We need to create a dropdown post*/}
-                  <input type="text" name="post-dropdown">
-                  </input>
+                  <input type="text" name="title" placeholder="Title"></input>
+                  <br/>
+                  <input type="text" name="text-post" placeholder="Write your post"></input>
                   <br/>
                   <button type="submit">Submit</button> {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
                   <button type="reset">Reset</button> {/*Button to reset the content of what you were trying to write*/}
@@ -75,12 +76,13 @@ function Member() {
 
             <button type="button">Comment</button>{/*We need to create an action to allow this button to dropdown the form*/}
               <form id="article-form" action="member" method="POST">
-                  <input type="text" name="post-dropdown">
-                  </input>
-                  <br/>
-                  <button type="submit">Submit</button> {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
-                  <button type="reset">Reset</button> {/*Button to reset the content of what you were trying to write*/}
-                  <button type="button">Donate</button> {/*Button to redirect you to the donation page*/}
+                <input type="text" name="title" placeholder="Title"></input>
+                <br/>
+                <input type="text" name="text-post" placeholder="Write your post"></input>
+                <br/>
+                <button type="submit">Submit</button> {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
+                <button type="reset">Reset</button> {/*Button to reset the content of what you were trying to write*/}
+                <button type="button">Donate</button> {/*Button to redirect you to the donation page*/}
               </form>
 
           </article>
@@ -106,12 +108,13 @@ function Member() {
 
             <button type="button">Comment</button>{/*We need to create an action to allow this button to dropdown the form*/}
               <form id="article-form" action="member" method="POST">
-                  <input type="text" name="post-dropdown">
-                  </input>
-                  <br/>
-                  <button type="submit">Submit</button> {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
-                  <button type="reset">Reset</button> {/*Button to reset the content of what you were trying to write*/}
-                  <button type="button">Donate</button> {/*Button to redirect you to the donation page*/}
+                <input type="text" name="title" placeholder="Title"></input>
+                <br/>
+                <input type="text" name="text-post" placeholder="Write your post"></input>
+                <br/>
+                <button type="submit">Submit</button> {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
+                <button type="reset">Reset</button> {/*Button to reset the content of what you were trying to write*/}
+                <button type="button">Donate</button> {/*Button to redirect you to the donation page*/}
               </form>  
 
           </article>
@@ -125,12 +128,13 @@ function Member() {
           
           <button type="button">Create Post</button>{/*We need to create an action to allow this button to dropdown the form*/}
             <form id="member-post-form" action="member" method="POST">
-                <input type="text" name="post-dropdown">
-                </input>
-                <br/>
-                <button type="submit">Add comment</button> {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
-                <button type="reset">Reset</button> {/*Button to reset the content of what you were trying to write*/}
-                <button type="button">Donate</button> {/*Button to redirect you to the donation page*/}
+              <input type="text" name="title" placeholder="Title"></input>
+              <br/>
+              <input type="text" name="text-post" placeholder="Write your post"></input>
+              <br/>
+              <button type="submit">Add Post</button> {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
+              <button type="reset">Reset</button> {/*Button to reset the content of what you were trying to write*/}
+              <button type="button">Donate</button> {/*Button to redirect you to the donation page*/}
             </form>
           
 
