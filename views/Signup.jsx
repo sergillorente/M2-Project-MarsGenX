@@ -4,8 +4,8 @@ const Layout = require('./Layout')
 
 function Signup(props) {
   return (
-    <Layout title="Signup">  
-      <form id="form-signup" action="auth/signup" method="POST" encType="multipart/form-data">
+    <Layout title="Signup"> 
+      <form id="form-signup" action="signup" method="POST" encType="multipart/form-data">
         <label>Email: </label>
           <br/>
           <input type='email' name="email" placeholder="Your email goes here" />

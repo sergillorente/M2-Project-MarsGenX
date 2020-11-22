@@ -25,10 +25,9 @@ authRouter.post('/signup', parser.single('profilepic'), (req, res, next) => {
     
     // we are requesting the values from the form
     const {email, password} = req.body
-    console.log(req.file);
-    const imageUrl = req.file.secure_url;
-
-    const newMember = { email, password, image: imageUrl };
+    
+    let imageUrl 
+    if (req.file) imageUrl = req.file.secure_url;
 
     if (email === '' || password === '') {
         const props = {errorMessage: 'Enter the email and password'}
@@ -43,8 +42,8 @@ authRouter.post('/signup', parser.single('profilepic'), (req, res, next) => {
     // Check if the email is already taken
 
     Member.findOne({email: email})
-    .then ((email) => {
-        if (email) {
+    .then ((foundMember) => {
+        if (foundMember) {
             const props = {errorMessage: 'Email is already taken. Try another!'}
 
             res.render('Signup', props)
@@ -52,22 +51,21 @@ authRouter.post('/signup', parser.single('profilepic'), (req, res, next) => {
             return;
         }
 
-        // if email is available, encrypt its password
+    // if email is available, encrypt its password
 
-        const salt = bcrypt.genSaltSync(saltRounds);
-        const hashedPassword = bcrypt.hashSync(password, salt);
+    const salt = bcrypt.genSaltSync(saltRounds);
+    const hashedPassword = bcrypt.hashSync(password, salt);
 
-        // After encrypting the password, create the new member in DB
+    // After encrypting the password, create the new member in DB
 
-        Member.create({email: email, password: hashedPassword, image: imageUrl})
-            .then((createdMember) => {
+    Member.create({email: email, password: hashedPassword, image: imageUrl})
+        .then((createdMember) => {
+            res.redirect('/private/member'); // it should redirect to the member page
+        })
 
-                res.redirect('/private/member'); // it should redirect to the member page
-            })
-
-            .catch((error) => {
-                console.log('Error in the redirection to the member page:', error)
-            })
+        .catch((error) => {
+            console.log('Error in the redirection to the member page:', error)
+        })
         
     })
     .catch((error) => {
