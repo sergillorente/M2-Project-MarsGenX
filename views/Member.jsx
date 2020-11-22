@@ -15,7 +15,7 @@ function Member() {
   return (
     <Layout title="Member">
       {<header>
-        <img href="./../public/images/logo.png" /> 
+        <img href="../public/images/main-logo.png" />
         <div>
           {/* <img />
           <p>Current points and status</p> */}

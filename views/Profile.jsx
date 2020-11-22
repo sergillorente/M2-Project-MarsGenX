@@ -6,6 +6,9 @@ const Layout = require('./Layout')
 function Profile() {
   return (
     <Layout title="Profile">
+<header>
+  <img href="../public/images/main-logo.png" />
+ </header>
 <h1>Profile settings</h1>
 <form id="form-setting" action="edit" method="POST" encType="multipart/form-data">
 
