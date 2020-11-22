@@ -7,13 +7,13 @@ function Donation() {
   return (
     <Layout title="Donation">
       {<header>
-        {/* <img logo image/> */}
+        <img href="./../public/images/logo.png" />
         <div>
           {/* <img />
           <p>Current points and status</p> */}
         </div>
       </header>}
-      
+
       <main>
         <h1>Donation Page</h1>
 
