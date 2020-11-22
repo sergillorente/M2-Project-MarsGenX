@@ -44,8 +44,6 @@ function Member() {
 
             <button type="button">Comment</button>{/*We need to create an action to allow this button to dropdown the form*/}
               <form id="article-form" action="member" method="POST"> {/* We need to create a dropdown post*/}
-                <label for="Comment">Share your thoughts:</label>
-                  <br/>
                   <input type="text" name="post-dropdown">
                   </input>
                   <br/>
@@ -77,8 +75,6 @@ function Member() {
 
             <button type="button">Comment</button>{/*We need to create an action to allow this button to dropdown the form*/}
               <form id="article-form" action="member" method="POST">
-                <label for="Comment">Share your thoughts:</label>
-                  <br/>
                   <input type="text" name="post-dropdown">
                   </input>
                   <br/>
@@ -110,8 +106,6 @@ function Member() {
 
             <button type="button">Comment</button>{/*We need to create an action to allow this button to dropdown the form*/}
               <form id="article-form" action="member" method="POST">
-                <label for="Comment">Share your thoughts:</label>
-                  <br/>
                   <input type="text" name="post-dropdown">
                   </input>
                   <br/>
@@ -131,8 +125,6 @@ function Member() {
           
           <button type="button">Create Post</button>{/*We need to create an action to allow this button to dropdown the form*/}
             <form id="member-post-form" action="member" method="POST">
-              <label for="Comment">Share your thoughts:</label>
-                <br/>
                 <input type="text" name="post-dropdown">
                 </input>
                 <br/>
