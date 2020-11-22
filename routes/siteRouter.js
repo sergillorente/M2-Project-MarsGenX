@@ -7,15 +7,27 @@ const posts = require('../bin/posts-mock-data')
 const Post = require('../models/Post.model');
 
 // Your routes
+
+// get member page
 siteRouter.get("/member", (req, res, next) => {
     res.render('Member')
 })
 
+
+// create a post
+
 siteRouter.post("/member", (req, res, next) => {
-    req.body()
+
+    const {title, text, image,  creator } = req.body
+
+    Member.create( {title, text, image,  creator}   )
+    .then( (post)  => {
+        res.redirect("/member");
+    })
+    .catch( (err) => console.log(err));
 })
 
-// const {'title', 'text', 'likes', 'image', 'comments', 'creator' } = req.body
+
 
 
 
