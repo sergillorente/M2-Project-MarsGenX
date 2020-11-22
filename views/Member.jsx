@@ -70,7 +70,7 @@ function Member() {
           </section>
           
           <aside>
-            <img href="./../public/images/Yoda.jpg" alt="Yoda meeting gravity 0"/>
+            <img href="./../public/images/BabyYoda.jpg" alt="Yoda meeting gravity 0"/>
           </aside>
           
           <form id="article-form" action="member" method="POST">
