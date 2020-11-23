@@ -7,7 +7,7 @@ const members = [
     greeting: "Hola",
     points: 15,
     status: "silver",
-    imageurl: "https://unsplash.com/photos/F_-Yrr_WzBY",
+    image: "https://unsplash.com/photos/F_-Yrr_WzBY"
   },
   {
     username: "Sergi",
@@ -17,7 +17,7 @@ const members = [
     greeting: "Heus",
     points: 80,
     status: "diamond",
-    imageurl: "https://unsplash.com/photos/R8L1l9RN198",
+    image: "https://unsplash.com/photos/R8L1l9RN198"
   },
   {
     username: "Salvatore",
@@ -27,7 +27,7 @@ const members = [
     greeting: "Valē",
     points: 35,
     status: "gold",
-    imageurl: "https://unsplash.com/photos/R1-mIR1OVS4",
+    image: "https://unsplash.com/photos/R1-mIR1OVS4"
   },
   {
     username: "Ornela",
@@ -37,7 +37,7 @@ const members = [
     greeting: "Norok",
     points: 90,
     status: "diamond",
-    imageurl: "https://unsplash.com/photos/M6YjPHcIH8A",
+    image: "https://unsplash.com/photos/M6YjPHcIH8A"
   },
   {
     username: "Anna",
@@ -47,7 +47,7 @@ const members = [
     greeting: "Admodum",
     points: 90,
     status: "diamond",
-    imageurl: "https://unsplash.com/photos/ZK0uz8cjdMs",
+    image: "https://unsplash.com/photos/ZK0uz8cjdMs"
   },
 ];
 

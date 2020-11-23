@@ -51,6 +51,7 @@ app.use(
   })
 );
 
+// GET /private/members
 // ROUTES
 app.use("/auth", authRouter);
 // app.use("/", siteRouter);

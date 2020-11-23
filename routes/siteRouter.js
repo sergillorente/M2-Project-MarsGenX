@@ -47,8 +47,16 @@ siteRouter.post("/posts/add", isLoggedIn, (req, res, next) => {
 
 // to update the current post
 
-siteRouter.post("/posts/update", (req,res,next) => {
+siteRouter.post("/posts/update", isLoggedIn, (req,res,next) => {
 
+    const { title, text, image } = req.body
+    const userId = req.session.currentUser._id;
+
+    Post.update( { title, text, image,  creator: userId }   )
+    .then( (post)  => {
+        res.redirect("/private/member");
+    })
+    .catch( (err) => console.log(err));
 })
 
 
