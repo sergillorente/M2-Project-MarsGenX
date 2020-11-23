@@ -8,7 +8,7 @@ const Post = require('../models/Post.model');
 
 
 
-// Middleware
+// Middlewares
 
 const isLoggedIn = require('./../utils/isLoggedIn');
 
