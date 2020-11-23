@@ -8,15 +8,16 @@ const Post = require('../models/Post.model');
 
 // Your routes
 
+// member page routes
+
 // get member page
 siteRouter.get("/member", (req, res, next) => {
     res.render('Member')
 })
 
-
 // create a post
 
-siteRouter.post("/member", (req, res, next) => {
+siteRouter.post("/posts/add", (req, res, next) => {
 
     const {title, text, image,  creator } = req.body
 
@@ -27,6 +28,24 @@ siteRouter.post("/member", (req, res, next) => {
     .catch( (err) => console.log(err));
 })
 
+// to update the current post
+
+siteRouter.post("/posts/update", (req,res,next) => {
+
+})
+
+
+// to delete the post
+
+siteRouter.delete("/posts/delete", (req, res, next) => {
+
+})
+
+// profile routes
+
+siteRouter.get('/edit-profile', (req, res, next) => {
+    res.render('Profile')
+})
 
 
 

@@ -3,7 +3,7 @@ const Layout = require('./Layout')
 
 
 
-function Profile() {
+function Profile(props) {
   return (
     <Layout title="Profile">
       <header>
