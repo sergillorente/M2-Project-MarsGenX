@@ -11,14 +11,16 @@ const Layout = require('./Layout')
 // ReactDOM.render(element, document.body)
 
 
-function Member() {
+function Member(props) {
+  // props.member
   return (
     <Layout title="Member">
       <header>
         <img href="../public/images/main-logo.png" />
         <div>
-          {/* <img />
-          <p>Current points and status</p> */}
+        {props.member.image}
+        {props.member.points}
+        {props.member.status}
         </div>
       </header>
 

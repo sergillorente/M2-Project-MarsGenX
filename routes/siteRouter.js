@@ -6,24 +6,41 @@ const Member = require('../models/Member.model');
 const posts = require('../bin/posts-mock-data')
 const Post = require('../models/Post.model');
 
+
+
+// Middleware
+
+const isLoggedIn = require('./../utils/isLoggedIn');
+
 // Your routes
 
 // member page routes
 
-// get member page
-siteRouter.get("/member", (req, res, next) => {
-    res.render('Member')
+// GET   /private/member
+siteRouter.get("/member", isLoggedIn, (req, res, next) => {
+    const userId = req.session.currentUser._id;
+    // const { _id } = req.session.currentUser;
+
+    Member.findOne({ _id: userId })
+        .then((member) => {
+            const props = { member: member }
+            res.render('Member', props)
+        })
 })
 
+// Router that renders the posts add form
+//siterRouter.get
+
 // create a post
+// POST   /private/posts/add
+siteRouter.post("/posts/add", isLoggedIn, (req, res, next) => {
+    // getting the values coming from the form inputs
+    const { title, text, image } = req.body
+    const userId = req.session.currentUser._id;
 
-siteRouter.post("/posts/add", (req, res, next) => {
-
-    const {title, text, image,  creator } = req.body
-
-    Member.create( {title, text, image,  creator}   )
+    Post.create( { title, text, image,  creator: userId }   )
     .then( (post)  => {
-        res.redirect("/member");
+        res.redirect("/private/member");
     })
     .catch( (err) => console.log(err));
 })

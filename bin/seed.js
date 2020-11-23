@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Member = require('./../models/Member.model');
 const Post = require('./../models/Post.model');
 
-const memberMock = require('./member-mock-data');
+const memberMock = require('./members-mock-data');
 const postMock = require('./posts-mock-data');
 
 const DB_NAME = 'mars-database';

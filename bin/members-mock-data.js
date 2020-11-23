@@ -4,9 +4,9 @@ const members = [
     nickname: "Marsian",
     email: "a@email.com",
     password: "123456",
-    greeting: "hola",
+    greeting: "Hola",
     points: 15,
-    status: "Silver",
+    status: "silver",
     imageurl: "https://unsplash.com/photos/F_-Yrr_WzBY",
   },
   {
@@ -16,7 +16,7 @@ const members = [
     password: "123456",
     greeting: "Heus",
     points: 80,
-    status: "Diamond",
+    status: "diamond",
     imageurl: "https://unsplash.com/photos/R8L1l9RN198",
   },
   {
@@ -26,7 +26,7 @@ const members = [
     password: "123456",
     greeting: "Valē",
     points: 35,
-    status: "Gold",
+    status: "gold",
     imageurl: "https://unsplash.com/photos/R1-mIR1OVS4",
   },
   {
@@ -36,7 +36,7 @@ const members = [
     password: "123456",
     greeting: "Norok",
     points: 90,
-    status: "Diamond",
+    status: "diamond",
     imageurl: "https://unsplash.com/photos/M6YjPHcIH8A",
   },
   {
@@ -46,7 +46,10 @@ const members = [
     password: "123456",
     greeting: "Admodum",
     points: 90,
-    status: "Diamond",
+    status: "diamond",
     imageurl: "https://unsplash.com/photos/ZK0uz8cjdMs",
   },
 ];
+
+
+module.exports = members; 
