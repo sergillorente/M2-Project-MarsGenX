@@ -30,7 +30,9 @@ siteRouter.get("/member", isLoggedIn, (req, res, next) => {
 
 // Router that renders the posts add form
 //siterRouter.get
-
+siteRouter.get("/member", (req, res, next) => {
+    res.render('Member');
+})
 // create a post
 // POST   /private/posts/add
 siteRouter.post("/posts/add", isLoggedIn, (req, res, next) => {
@@ -63,13 +65,36 @@ siteRouter.post("/posts/update", isLoggedIn, (req,res,next) => {
 // to delete the post
 
 siteRouter.delete("/posts/delete", (req, res, next) => {
+    const { title, text, image } = req.body
+    const userId = req.session.currentUser._id;
 
+    Post.update( { title, text, image,  creator: userId }   )
+    .then( (post)  => {
+        res.redirect("/private/member");
+    })
+    .catch( (err) => console.log(err));
 })
 
 // profile routes
 
-siteRouter.get('/edit-profile', (req, res, next) => {
+siteRouter.get('/edit-profile', isLoggedIn, (req, res, next) => {
     res.render('Profile')
+})
+
+siteRouter.post('/edit-profile', isLoggedIn, (req, res, next) => {
+    
+})
+
+
+// Donation routes
+
+siteRouter.get('/donation', isLoggedIn, (req, res, next) => {
+
+})
+
+
+siteRouter.post('/donation', isLoggedIn, (req, res, next) => {
+    
 })
 
 
