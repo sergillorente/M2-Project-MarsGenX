@@ -51,12 +51,12 @@ The purpose of our app is to support SpaceX missions to mars.:rocket: The app pr
 | `POST`   | `/signup`                                 | Sends Sign Up info to the server and creates user in the DB. | { email, password }                                          |
 | `GET`    | `/private/edit-profile`                   | Private route. Renders `edit-profile` form view.             |                                                              |
 | `POST`   | `/private/edit-profile`                   | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, nickname,  [imageUrl], description, race [] } |
-| `GET`    | `/private/member/:idmember`               | Private route. Render the member-page view.                  |                                                              |
-| `POST`   | `/private/posts/add/:idmember`            | Private route. Adds a new post for the current user.         | { title, text,  [image]  }                                   |
+| `GET`    | `/private/member/:memberid`               | Private route. Render the member-page view.                  |                                                              |
+| `POST`   | `/private/posts/add/:memberid`            | Private route. Adds a new post for the current user.         | { title, text,  [image]  }                                   |
 | `POST`   | `/private/posts/update/:idmember/:postid` | Private route. Updates the existing post from the current user. | { title, text, [image]  }                                    |
 | `DELETE` | `/private/posts/delete/:idmember/:postid` | Private route. Deletes the existing post from the current user. |                                                              |
-| `GET`    | `/private/donation/:idmember`             | Private route. Renders the`Donation` page                    |                                                              |
-| `POST`   | `/private/donation/:idmember`             | Private route. Adds points to the member who donated.        | { amount }                                                   |
+| `GET`    | `/private/donation/:memberid`             | Private route. Renders the`Donation` page                    |                                                              |
+| `POST`   | `/private/donation/:memberid`             | Private route. Adds points to the member who donated.        | { amount }                                                   |
 
 
 

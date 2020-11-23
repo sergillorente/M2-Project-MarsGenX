@@ -13,14 +13,14 @@ function Profile() {
       <h1>Profile settings</h1>
       <form id="form-setting" action="edit" method="POST" encType="multipart/form-data">
 
-      <label>Nickname:</label>
+      <label>Username:</label>
       <br/>
-      <input type='Nickname' name="Nickname" placeholder="Edit your Nickname" />
+      <input type="text" name="username" placeholder="Type in here" />
       <br/>
 
-      <label>Email:</label>
+      <label>Nickname:</label>
       <br/>
-      <input type='email' name="email" placeholder="Modify your email" />
+      <input type='text' name="nickname" placeholder="Edit your Nickname" />
       <br/>
 
       <label>Greetings:</label>
