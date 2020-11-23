@@ -10,7 +10,7 @@ function Login(props) {
 
       <h1>Login</h1>
       <br/>
-      <form id="form-login" action="auth/login" method="POST">
+      <form id="form-login" action="/auth/login" method="POST">
         <label>Email: </label>
         <br />
         <input type="email" name="email" placeholder="Your email goes here" />
