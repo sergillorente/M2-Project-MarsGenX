@@ -8,6 +8,11 @@ function Profile(props) {
     <Layout title="Profile">
       <header>
         <img href="../public/images/main-logo.png" />
+        <div>
+        {props.member.image}
+        {props.member.points}
+        {props.member.status}
+        </div>
       </header>
       
       <h1>Profile settings</h1>
@@ -25,7 +30,7 @@ function Profile(props) {
 
       <label>Greetings:</label>
       <br/>
-      <input type='text' name="text" placeholder="Choose your greeting" />
+      <input type='text' name="greeting" placeholder="Choose your greeting" />
       <br/>
 
       <label>Profile picture:</label>

@@ -60,6 +60,7 @@ authRouter.post('/signup', parser.single('profilepic'), (req, res, next) => {
 
     Member.create({email: email, password: hashedPassword, image: imageUrl})
         .then((createdMember) => {
+            req.session.currentUser = createdMember;
             res.redirect('/private/member'); // it should redirect to the member page
         })
 
@@ -86,6 +87,8 @@ authRouter.post('/login', (req, res, next) => {
 
     if (email === '' || password === '') {
 
+        const props = {errorMessage: 'Please, enter the email and password'}
+
         res.render('Login', props)
         return;
     }
@@ -95,7 +98,7 @@ authRouter.post('/login', (req, res, next) => {
             if (!email) {
 
                  // If the user by the given email was not found, send error message
-                const props = {errorMessage: 'The user does not exist'}
+                const props = {errorMessage: 'The member does not exist'}
 
                 res.render('Login', props)
                 return;
@@ -106,7 +109,7 @@ authRouter.post('/login', (req, res, next) => {
             // Create the session - which also triggers the creation of the cookie
             req.session.currentMember = member;
 
-            res.redirect('/member'); // needs revision for the route. The route name may change
+            res.redirect('/member'); 
             }
             else {
             res.render('Login', { errorMessage: "Incorrect password" } );
