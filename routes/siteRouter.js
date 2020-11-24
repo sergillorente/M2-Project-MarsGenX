@@ -12,7 +12,7 @@ const isLoggedIn = require("./../utils/isLoggedIn");
 
 // Your routes
 
-// member page routes
+// Member Page routes
 
 // GET   /private/member
 siteRouter.get("/member", isLoggedIn, (req, res, next) => {
@@ -45,21 +45,6 @@ siteRouter.post("/posts/add", isLoggedIn, (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
-// to update the current post
-
-siteRouter.post("/posts/update/:postId", isLoggedIn, (req, res, next) => {
-    // getting the values coming from the form inputs
-  const { title, text, image } = req.body;
-
-  const userId = req.session.currentUser._id; // a cookie for the identification of the member (by its ID)
-
-  const postId = req.params.postId; // Why do we take the params here?
-  Post.update({ title, text, image, creator: userId })
-    .then((post) => {
-      res.redirect("/private/member");
-    })
-    .catch((err) => console.log(err));
-});
 
 // add comment to post
 
@@ -80,6 +65,29 @@ siteRouter.post("/posts/comment/:postId", isLoggedIn, (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
+// to update the current post
+
+siteRouter.post("/posts/update/:postId", isLoggedIn, (req, res, next) => {
+  // getting the values coming from the form inputs
+const { title, text, image } = req.body;
+
+// const postId = req.params.postId;
+const userId = req.session.currentUser._id; // a cookie for the identification of the member (by its ID)
+const creator = Post.creator;
+
+if (creator === userId) {
+  Post.update({ title, text, image })
+  .then((post) => {
+    res.redirect("/private/member");
+    return;
+  })
+  .catch((err) => console.log(err));
+}
+
+
+
+});
+
 // to delete the post
 
 siteRouter.delete("/posts/delete", isLoggedIn, (req, res, next) => {
@@ -92,6 +100,8 @@ siteRouter.delete("/posts/delete", isLoggedIn, (req, res, next) => {
     })
     .catch((err) => console.log(err));
 });
+
+
 
 // profile routes
 

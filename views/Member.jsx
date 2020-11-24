@@ -21,6 +21,9 @@ function Member(props) {
           {props.member.points}
           {props.member.status}
         </div>
+        <a href ="/auth/logout">
+          <button>Log out</button>
+        </a>
       </header>
 
       <main>
@@ -40,27 +43,31 @@ function Member(props) {
               <form
                 id="article-form"
                 action={`/private/posts/comment/${post._id}`}
-                method="POST"
-              >
+                method="POST">
+
                 <input type="text" name="comment" placeholder="Comment"></input>
                 <br />
-                <button type="submit">Submit</button>{" "}
+                <button type="submit">Submit</button>
+                
                
                 {/* Button to submit the text you have written in the comment.*/}
               </form>
 
               {/*map of the comments that return the comment with the title */}
-
+                
               {post.comments.map((commentObj) => {
                 return (
                   <div>
-                  <p>{commentObj.member.email}</p>
+                    <p>{commentObj.member.email}</p>
                     <p>{commentObj.comment}</p>
                   </div>
                 )
               })}
+
             </div>
+            
           );
+          
         })}
 
         <div>
