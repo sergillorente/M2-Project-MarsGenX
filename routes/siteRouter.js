@@ -14,6 +14,9 @@ const isLoggedIn = require('./../utils/isLoggedIn');
 
 // Your routes
 
+
+// Try if the image can be loaded in the member page. Creation of a new route
+
 // member page routes
 
 // GET   /private/member
@@ -120,7 +123,7 @@ siteRouter.post('/donation', isLoggedIn, (req, res, next) => {
 
     Post.create( { amount, creator: userId}   )
     .then( (post)  => {
-        res.redirect("/edit/profile");
+        res.redirect('Member');
     })
     .catch( (err) => console.log(err));
 })
