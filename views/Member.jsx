@@ -39,14 +39,22 @@ function Member(props) {
 
               <form
                 id="article-form"
-                action={`/private/posts/edit/${post._id}`}
+                action={`/private/posts/comment/${post._id}`}
                 method="POST"
               >
-                <input type="text" name="text" placeholder="Comment"></input>
+                <input type="text" name="comment" placeholder="Comment"></input>
                 <br />
                 <button type="submit">Submit</button>{" "}
                 {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
               </form>
+              {post.comments.map((commentObj) => {
+                return (
+                  <div>
+                  <p>{commentObj.member.email}</p>
+                    <p> {commentObj.comment}</p>
+                  </div>
+                )
+              })}
             </div>
           );
         })}

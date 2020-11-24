@@ -10,7 +10,7 @@ const postSchema = new Schema (
         "comments": [
             {
                 member: { type: mongoose.SchemaTypes.ObjectId, ref: "Member" },
-                comment: [String],
+                comment: String,
             }
         ],
         "creator": { type: mongoose.SchemaTypes.ObjectId, ref: "Member" },
