@@ -110,4 +110,17 @@ authRouter.post("/login", (req, res, next) => {
   });
 });
 
+// Log out Route /auth/logout
+
+authRouter.get("/logout", isLoggedIn, (req, res, next) => {
+  req.session.destroy((err) => {
+    if (err) {
+      res.render('Error')
+    }
+    else {
+      res.redirect('/auth/login');
+    }
+  })
+}) 
+
 module.exports = authRouter;

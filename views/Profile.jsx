@@ -13,6 +13,9 @@ function Profile(props) {
         {props.member.points}
         {props.member.status}  */}
         </div>
+        <a href ="/auth/logout">
+          <button>Log out</button>
+        </a>
       </header>
       
       <h1>Profile settings</h1>
