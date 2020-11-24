@@ -45,6 +45,36 @@ siteRouter.post("/posts/add", isLoggedIn, (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
+// update the same post. Only if the current member is the one who wrote the post
+// delete the same post. Only if the current member is the one who wrote the post
+
+// to update the current post
+siteRouter.post("/posts/update/:postId", isLoggedIn, (req,res,next) => {
+  const userId = req.session.currentUser._id;
+  
+  const creatorPost = req.session.post
+  Post.find()
+  .populate('creator')
+})
+
+
+
+
+
+
+siteRouter.post("/posts/update/:postId", isLoggedIn, (req, res, next) => {
+    // getting the values coming from the form inputs
+  const { title, text, image } = req.body;
+
+  const userId = req.session.currentUser._id; // a cookie for the identification of the member (by its ID)
+
+  const postId = req.params.postId; // Why do we take the params here?
+  Post.update({ title, text, image, creator: userId })
+    .then((post) => {
+      res.redirect("/private/member");
+    })
+    .catch((err) => console.log(err));
+});
 
 // add comment to post
 
@@ -90,6 +120,8 @@ if (creator === userId) {
 
 // to delete the post
 
+
+
 siteRouter.delete("/posts/delete", isLoggedIn, (req, res, next) => {
   const { title, text, image } = req.body;
   const userId = req.session.currentUser._id;
@@ -104,6 +136,16 @@ siteRouter.delete("/posts/delete", isLoggedIn, (req, res, next) => {
 
 
 // profile routes
+
+
+//main profile routes
+
+siteRouter.get("/profile", isLoggedIn, (req, res, next) => {
+  res.render("profile");
+})
+
+
+
 
 siteRouter.get("/edit-profile", isLoggedIn, (req, res, next) => {
   const userId = req.session.currentUser._id;
@@ -146,5 +188,32 @@ siteRouter.post("/donation", isLoggedIn, (req, res, next) => {
     })
     .catch((err) => console.log(err));
 });
+
+
+// postsettings routes
+
+siteRouter.post("/posts/update/:postid", isLoggedIn, (req, res, next) => {
+  // getting the values coming from the form inputs
+const { title, text, image } = req.body;
+
+const userId = req.session.currentUser._id; // a cookie for the identification of the member (by its ID)
+
+const postId = req.params.postid;
+Post.findByIdAndUpdate(postId, { title, text, image })
+  .then((post) => {
+    res.redirect("/private/member");
+  })
+  .catch((err) => console.log(err));
+});
+
+
+
+
+siteRouter.get("/postsettings", isLoggedIn, (req, res, next) => {
+  res.render("postsettings");
+})
+
+
+
 
 module.exports = siteRouter;

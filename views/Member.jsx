@@ -29,7 +29,12 @@ function Member(props) {
       <main>
         <h1>Member Page</h1>
         {props.allPosts.map((post, i) => {
-          return (
+         console.log(post)
+         console.log(typeof post.creator)
+        console.log(typeof props.member._id)
+        console.log( props.member._id === String(post.creator))
+          return  (
+  
             <div className="article">
               <div>
                 <h3>{post.title}</h3>
@@ -48,8 +53,6 @@ function Member(props) {
                 <input type="text" name="comment" placeholder="Comment"></input>
                 <br />
                 <button type="submit">Submit</button>
-                
-               
                 {/* Button to submit the text you have written in the comment.*/}
               </form>
 
@@ -61,9 +64,16 @@ function Member(props) {
                     <p>{commentObj.member.email}</p>
                     <p>{commentObj.comment}</p>
                   </div>
-                )
+                );
               })}
+                          {/*prova*/}
 
+
+                          {String(props.member._id) === String(post.creator) ?
+               <a href= "/private/postsettings"><button> Edit</button></a>
+              : null
+              }
+                                                                       
             </div>
             
           );
