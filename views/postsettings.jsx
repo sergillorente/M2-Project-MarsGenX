@@ -15,22 +15,17 @@ function Profile(props) {
         </div>
       </header>
       
-      <h1>Profile settings</h1>
-      <form id="form-setting" action="edit" method="POST" encType="multipart/form-data">
+      <h1>Post settings</h1>
+      <form id="form-setting" action={`/posts/update/${props._id}`} method="POST" encType="multipart/form-data">
 
-      <label>Username:</label>
+      <label>Title:</label>
       <br/>
-      <input type="text" name="username" placeholder="Type in here" />
-      <br/>
-
-      <label>Nickname:</label>
-      <br/>
-      <input type='text' name="nickname" placeholder="Edit your Nickname" />
+      <input type="text" name="username" placeholder="New title here" />
       <br/>
 
-      <label>Greetings:</label>
+      <label>Text:</label>
       <br/>
-      <input type='text' name="greeting" placeholder="Choose your greeting" />
+      <input type='text' name="nickname" placeholder="Edit your post" />
       <br/>
 
       <label>Profile picture:</label>
@@ -38,7 +33,7 @@ function Profile(props) {
       <input type="file" name="profilepic"/>
       <br/>
 
-      <button type="submit" className="signup-button">Edit your account</button>
+      <button type="submit" className="signup-button">Edit your Post</button>
 
 
       {

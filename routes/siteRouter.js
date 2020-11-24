@@ -97,6 +97,8 @@ siteRouter.post("/posts/comment/:postId", isLoggedIn, (req, res, next) => {
 
 // to delete the post
 
+
+
 siteRouter.delete("/posts/delete", isLoggedIn, (req, res, next) => {
   const { title, text, image } = req.body;
   const userId = req.session.currentUser._id;
@@ -109,6 +111,16 @@ siteRouter.delete("/posts/delete", isLoggedIn, (req, res, next) => {
 });
 
 // profile routes
+
+
+//main profile routes
+
+siteRouter.get("/profile", isLoggedIn, (req, res, next) => {
+  res.render("profile");
+})
+
+
+
 
 siteRouter.get("/edit-profile", isLoggedIn, (req, res, next) => {
   const userId = req.session.currentUser._id;
@@ -151,5 +163,32 @@ siteRouter.post("/donation", isLoggedIn, (req, res, next) => {
     })
     .catch((err) => console.log(err));
 });
+
+
+// postsettings routes
+
+siteRouter.post("/posts/update/:postid", isLoggedIn, (req, res, next) => {
+  // getting the values coming from the form inputs
+const { title, text, image } = req.body;
+
+const userId = req.session.currentUser._id; // a cookie for the identification of the member (by its ID)
+
+const postId = req.params.postid;
+Post.findByIdAndUpdate(postId, { title, text, image })
+  .then((post) => {
+    res.redirect("/private/member");
+  })
+  .catch((err) => console.log(err));
+});
+
+
+
+
+siteRouter.get("/postsettings", isLoggedIn, (req, res, next) => {
+  res.render("postsettings");
+})
+
+
+
 
 module.exports = siteRouter;
