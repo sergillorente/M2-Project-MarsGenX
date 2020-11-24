@@ -45,13 +45,17 @@ function Member(props) {
                 <input type="text" name="comment" placeholder="Comment"></input>
                 <br />
                 <button type="submit">Submit</button>{" "}
-                {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
+               
+                {/* Button to submit the text you have written in the comment.*/}
               </form>
+
+              {/*map of the comments that return the comment with the title */}
+
               {post.comments.map((commentObj) => {
                 return (
                   <div>
                   <p>{commentObj.member.email}</p>
-                    <p> {commentObj.comment}</p>
+                    <p>{commentObj.comment}</p>
                   </div>
                 )
               })}
