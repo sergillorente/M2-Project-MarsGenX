@@ -89,7 +89,8 @@ authRouter.post("/login", (req, res, next) => {
     return;
   }
 
-  Member.findOne({ email }).then((member) => {
+  Member.findOne({ email })
+    .then((member) => {
     if (!email) {
       // If the user by the given email was not found, send error message
       const props = { errorMessage: "The user does not exist" };
@@ -97,13 +98,14 @@ authRouter.post("/login", (req, res, next) => {
       res.render("Login", props);
       return;
     }
+    
     const passwordCorrect = bcrypt.compareSync(password, member.password);
 
     if (passwordCorrect) {
       // Create the session - which also triggers the creation of the cookie
       req.session.currentMember = member;
 
-      res.redirect("/private/member"); // needs revision for the route. The route name may change
+      res.redirect("/private/member"); 
     } else {
       res.render("Login", { errorMessage: "Incorrect password" });
     }
@@ -113,8 +115,8 @@ authRouter.post("/login", (req, res, next) => {
 // Log out Route /auth/logout
 
 authRouter.get("/logout", isLoggedIn, (req, res, next) => {
-  req.session.destroy((err) => {
-    if (err) {
+  req.session.destroy((error) => {
+    if (error) {
       res.render('Error')
     }
     else {
