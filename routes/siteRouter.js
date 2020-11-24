@@ -12,8 +12,6 @@ const isLoggedIn = require("./../utils/isLoggedIn");
 
 // Your routes
 
-// Try if the image can be loaded in the member page. Creation of a new route
-
 // member page routes
 
 // GET   /private/member
