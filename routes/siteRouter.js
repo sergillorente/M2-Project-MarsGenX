@@ -45,7 +45,22 @@ siteRouter.post("/posts/add", isLoggedIn, (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
+// update the same post. Only if the current member is the one who wrote the post
+// delete the same post. Only if the current member is the one who wrote the post
+
 // to update the current post
+siteRouter.post("/posts/update/:postId", isLoggedIn, (req,res,next) => {
+  const userId = req.session.currentUser._id;
+  
+  const creatorPost = req.session.post
+  Post.find()
+  .populate('creator')
+})
+
+
+
+
+
 
 siteRouter.post("/posts/update/:postId", isLoggedIn, (req, res, next) => {
   const { title, text, image } = req.body;
