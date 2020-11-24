@@ -20,6 +20,7 @@ authRouter.get("/signup", (req, res, next) => {
   res.render("Signup");
 });
 
+
 // POST signup .This route will update the data in the DB
 authRouter.post("/signup", parser.single("profilepic"), (req, res, next) => {
   // we are requesting the values from the form

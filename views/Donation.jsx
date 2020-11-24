@@ -6,13 +6,14 @@ const Layout = require('./Layout')
 function Donation() {
   return (
     <Layout title="Donation">
-      {<header>
+      <header>
         <img href="../public/images/main-logo.png" />
         <div>
-          {/* <img />
-          <p>Current points and status</p> */}
+        {props.member.image}
+        {props.member.points}
+        {props.member.status}
         </div>
-      </header>}
+      </header>
 
       <main>
         <h1>Donation Page</h1>
@@ -20,7 +21,7 @@ function Donation() {
         <form id="donation-form" action="donation" method="POST">
           <label>Your donation</label>
             <br/>
-            <input type="text" name="donation-amount" placeholder="1€ = 10pts"></input>
+            <input type="text" name="amount" placeholder="1€ = 10pts"></input>
             <br/>
             <button type="submit">Donate</button>
         </form>
