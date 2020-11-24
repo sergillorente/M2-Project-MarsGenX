@@ -18,18 +18,18 @@ const isLoggedIn = require("./../utils/isLoggedIn");
 
 // GET   /private/member
 siteRouter.get("/member", isLoggedIn, (req, res, next) => {
-  const userId = req.session.currentUser._id;
-  // const { _id } = req.session.currentUser;
+  const userId = req.session.currentUser._id; // Creation of the cookie for each member
 
-  Member.findOne({ _id: userId }).then((member) => {
-    Post.find()
-    .populate('comments.member')
-    .then((allPosts) => {
-      console.log(allPosts[0].comments);
-      const props = { member: member, allPosts: allPosts };
-      res.render("Member", props);
+  Member.findOne({ _id: userId }) // You are looking for an specific member by his/her id from all of those who are in the DB
+    .then((member) => { 
+        Post.find()
+            .populate('comments.member')
+            .then((allPosts) => {
+
+            const props = { member: member, allPosts: allPosts }; //WTF does this line? What are the values that is taking?
+            res.render("Member", props);
+            });
     });
-  });
 });
 
 // create a post
@@ -50,9 +50,12 @@ siteRouter.post("/posts/add", isLoggedIn, (req, res, next) => {
 // to update the current post
 
 siteRouter.post("/posts/update/:postId", isLoggedIn, (req, res, next) => {
+    // getting the values coming from the form inputs
   const { title, text, image } = req.body;
-  const userId = req.session.currentUser._id;
-  const postId = req.params.postId;
+
+  const userId = req.session.currentUser._id; // a cookie for the identification of the member (by its ID)
+
+  const postId = req.params.postId; // Why do we take the params here?
   Post.update({ title, text, image, creator: userId })
     .then((post) => {
       res.redirect("/private/member");
