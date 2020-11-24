@@ -23,7 +23,6 @@ siteRouter.get("/member", isLoggedIn, (req, res, next) => {
     
     Post.find()
       .then((allPosts) => {
-          console.log("all posts", allPosts)
         const props = { member: member, allPosts: allPosts };
         res.render("Member", props);
       })
@@ -35,7 +34,7 @@ siteRouter.get("/member", isLoggedIn, (req, res, next) => {
 // siterRouter.get
 
 // create a post
-// POST   /private/posts/add
+
 siteRouter.post("/posts/add", isLoggedIn, (req, res, next) => {
   // getting the values coming from the form inputs
   const { title, text, image } = req.body;
