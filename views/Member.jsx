@@ -69,9 +69,9 @@ function Member(props) {
                   <button> Edit</button>
                 </a>
               ) : null}
-              
+
               {/* Link the AddPost page */}
-              
+
 
               <form action={`/private/deletepost/${post._id}`} method="GET">
                 <button>Delete</button>
@@ -80,34 +80,28 @@ function Member(props) {
           );
         })}
         <form action={'/private/posts/add/'} method="GET" >
-                <button>Add New Post</button>
-              </form>
+          <button>Add New Post</button>
+        </form>
 
         <footer>
           <ul>
             <li>
               <a>
-                <img
-                  href="./../public/images/NewPost.png"
-                  alt="New post icon"
-                />
+                <img src="/images/NewPost.png" alt="New post icon" />
               </a>
               <br />
               <label>New Post</label>
             </li>
             <li>
               <a>
-                <img
-                  href="./../public/images/Donation.jpg"
-                  alt="Donation icon"
-                />
+                <img src="/images/Donation.jpg" alt="Donation icon"/>
               </a>
               <br />
               <label>Donate</label>
             </li>
             <li>
               <a>
-                <img href="./../public/images/Profile.png" alt="Profile icon" />
+                <img src="/images/Profile.png" alt="Profile icon" />
               </a>
               <br />
               <label>Profile</label>

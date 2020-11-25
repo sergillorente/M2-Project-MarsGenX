@@ -7,7 +7,7 @@ function Home() {
       <img src="../public/images/homepage-image.jpg" />{/*This image is the background image for the whole body*/}
 
       <header>
-        <img href="../public/images/main-logo.png" />{/*The logo should be in the top center part of the main*/}
+        <img src='/images/main-logo.png' />{/*The logo should be in the top center part of the main*/}
       </header>
 
       <main>
