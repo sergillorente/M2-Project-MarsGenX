@@ -8,11 +8,11 @@ function Donation() {
     <Layout title="Donation">
       <header>
         <img src='/images/main-logo.png' />
-        <div>
+        {/* <div>
         {props.member.image}
         {props.member.points}
         {props.member.status}
-        </div>
+        </div> */}
         <a href ="/auth/logout">
           <button>Log out</button>
         </a>
@@ -22,12 +22,17 @@ function Donation() {
         <h1>Donation Page</h1>
 
         <form id="donation-form" action="donation" method="POST">
-          <label>Your donation</label>
+          <label>Your donation:</label>
             <br/>
             <input type="text" name="amount" placeholder="1€ = 10pts"></input>
             <br/>
             <button type="submit">Donate</button>
         </form>
+        {
+            props.thankYouMessage
+          ? <div className = "thank-you-message">{props.thankYouMessage}</div>
+          : null
+          }
 
         <footer>
 

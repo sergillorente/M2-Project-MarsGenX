@@ -26,11 +26,6 @@ function Profile(props) {
       <input type="text" name="username" placeholder="Type in here" />
       <br/>
 
-      <label>Nickname:</label>
-      <br/>
-      <input type='text' name="nickname" placeholder="Edit your Nickname" />
-      <br/>
-
       <label>Greetings:</label>
       <br/>
       <input type='text' name="greeting" placeholder="Choose your greeting" />
@@ -69,7 +64,7 @@ function Profile(props) {
               <label>Donate</label>
             </li>
             <li>
-              <a>
+              <a href="/private/member">
                 <img src="/images/Member.png" alt="Profile icon" />
               </a>
               <br />
