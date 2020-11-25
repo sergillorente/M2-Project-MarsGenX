@@ -7,7 +7,7 @@ function Donation() {
   return (
     <Layout title="Donation">
       <header>
-        <img href="../public/images/main-logo.png" />
+        <img src='/images/main-logo.png' />
         <div>
         {props.member.image}
         {props.member.points}

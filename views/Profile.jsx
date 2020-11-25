@@ -7,7 +7,7 @@ function Profile(props) {
   return (
     <Layout title="Profile">
       <header>
-        <img href="../public/images/main-logo.png" />
+        <img src='/images/main-logo.png' />
         <div>
         { /*{props.member.image}
         {props.member.points}
@@ -51,6 +51,32 @@ function Profile(props) {
       }
 
       </form>
+
+      <footer>
+          <ul>
+            <li>
+              <a>
+                <img src="/images/NewPost.png" alt="New post icon" />
+              </a>
+              <br />
+              <label>New Post</label>
+            </li>
+            <li>
+              <a>
+                <img src="/images/Donation.jpg" alt="Donation icon"/>
+              </a>
+              <br />
+              <label>Donate</label>
+            </li>
+            <li>
+              <a>
+                <img src="/images/Member.png" alt="Profile icon" />
+              </a>
+              <br />
+              <label>Member</label>
+            </li>
+          </ul>
+        </footer>
 
     </Layout>
   )

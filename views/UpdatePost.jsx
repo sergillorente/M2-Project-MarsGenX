@@ -6,7 +6,7 @@ function UpdatePost(props) {
   return (
     <Layout title="Profile">
       <header>
-        <img href="../public/images/main-logo.png" />
+        <img src='/images/main-logo.png' />
         <div>
           {/*{props.member.image}
         {props.member.points}
@@ -30,11 +30,11 @@ function UpdatePost(props) {
         <input type="file" name="image" />
         {/*<input type="file" name="image" placeholder="choose your image"></input>*/}
         <button type="submit">Update Post</button>{" "}
-        
+
       </form>
 
-      <form action= {`/private/deletepost/${props.postId}`} method = "GET" >
-      <button>Delete</button>
+      <form action={`/private/deletepost/${props.postId}`} method="GET" >
+        <button>Delete</button>
       </form>
     </Layout>
   );

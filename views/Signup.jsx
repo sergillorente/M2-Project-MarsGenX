@@ -6,7 +6,7 @@ function Signup(props) {
   return (
     <Layout title="Signup"> 
     <header>
-    <img href="../public/images/main-logo.png" />
+      <img src='/images/main-logo.png' />
     </header>
     
     <h1>Sign up</h1>

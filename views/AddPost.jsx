@@ -32,8 +32,8 @@ function AddPost(props) {
                         <input type="text" name="text" placeholder="Write your post" />
                         <br />
                         <input type="file" name="image" />
-                        
-                        <button type="submit">Add Post</button>{" "}
+                        <br/>
+                        <button type="submit">Add Post</button>
                         {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
                     </form>
                 </div>
@@ -42,7 +42,7 @@ function AddPost(props) {
                         <li>
                             <a>
                                 <img
-                                    href="./../public/images/NewPost.png"
+                                    src="/images/NewPost.png"
                                     alt="New post icon"
                                 />
                             </a>
@@ -52,7 +52,7 @@ function AddPost(props) {
                         <li>
                             <a>
                                 <img
-                                    href="./../public/images/Donation.jpg"
+                                    src="/images/Donation.jpg"
                                     alt="Donation icon"
                                 />
                             </a>
@@ -61,7 +61,7 @@ function AddPost(props) {
                         </li>
                         <li>
                             <a>
-                                <img href="./../public/images/Profile.png" alt="Profile icon" />
+                                <img src="/images/Profile.png" alt="Profile icon" />
                             </a>
                             <br />
                             <label>Profile</label>

@@ -37,12 +37,16 @@ siteRouter.get('/posts/add/', isLoggedIn, (req, res, next) => {
   res.render("AddPost");
 })
 
-siteRouter.post("/posts/add", isLoggedIn, (req, res, next) => {
+siteRouter.post("/posts/add", isLoggedIn, parser.single('image'), (req, res, next) => {
   // getting the values coming from the form inputs
   const { title, text, image } = req.body;
+  
+  let imageUrl;
+  if (req.file) imageUrl = req.file.secure_url;
+
   const userId = req.session.currentUser._id;
 
-  Post.create({ title, text, image, creator: userId })
+  Post.create({ title, text, image: imageUrl })
     .then((post) => {
       res.redirect("/private/member");
     })
