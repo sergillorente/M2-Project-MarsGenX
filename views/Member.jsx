@@ -62,7 +62,6 @@ function Member(props) {
                   </div>
                 );
               })}
-              {/*prova*/}
 
               {String(props.member._id) === String(post.creator) ? (
                 <a href={`/private/updatepost/${post._id}`}>

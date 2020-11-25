@@ -40,13 +40,13 @@ siteRouter.get('/posts/add/', isLoggedIn, (req, res, next) => {
 siteRouter.post("/posts/add", isLoggedIn, parser.single('image'), (req, res, next) => {
   // getting the values coming from the form inputs
   const { title, text, image } = req.body;
-  
+
   let imageUrl;
   if (req.file) imageUrl = req.file.secure_url;
 
   const userId = req.session.currentUser._id;
 
-  Post.create({ title, text, image: imageUrl })
+  Post.create({ title, text, image: imageUrl, creator: userId })
     .then((post) => {
       res.redirect("/private/member");
     })
@@ -81,8 +81,13 @@ siteRouter.post("/posts/update/:postId", isLoggedIn, (req, res, next) => {
 
 siteRouter.get("/updatepost/:postId", isLoggedIn, (req, res, next) => {
   const postId = req.params.postId
-  const props = { postId: postId };
-  res.render("UpdatePost", props);
+  
+  Post.findById(postId)
+  .then((post) => {
+      const props = { postId: postId, post };
+      res.render("UpdatePost", props);
+    })
+    .catch((error) => console.log(error) )
 })
 
 

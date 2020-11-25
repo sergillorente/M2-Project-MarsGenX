@@ -23,9 +23,11 @@ function UpdatePost(props) {
       >
         <label>Title:</label>
         <br />
-        <input type="text" name="title" placeholder="Update Title" />
+        <input type="text" name="title" placeholder="Update Title" defaultValue={props.post.title}/>
         <br />
-        <input type="text" name="text" placeholder="Write your post" />
+        <label>Text:</label>
+        <br/>
+        <input type="text" name="text" placeholder="Write your post" defaultValue={props.post.text}/>
         <br />
         <input type="file" name="image" />
         {/*<input type="file" name="image" placeholder="choose your image"></input>*/}
