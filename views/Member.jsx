@@ -21,7 +21,7 @@ function Member(props) {
           {props.member.points}
           {props.member.status}
         </div>
-        <a href ="/auth/logout">
+        <a href="/auth/logout">
           <button>Log out</button>
         </a>
       </header>
@@ -29,17 +29,16 @@ function Member(props) {
       <main>
         <h1>Member Page</h1>
         {props.allPosts.map((post, i) => {
-         console.log(post)
-         console.log(typeof post.creator)
-        console.log(typeof props.member._id)
-        console.log( props.member._id === String(post.creator))
-          return  (
-  
+          console.log(post);
+          console.log(typeof post.creator);
+          console.log(typeof props.member._id);
+          console.log(props.member._id === String(post.creator));
+          return (
             <div className="article">
               <div>
                 <h3>{post.title}</h3>
                 <p>{post.text}</p>
-                <aside> {post.image} </aside>
+                <img src={post.image} />
               </div>
 
               <h4> Comment</h4>
@@ -48,8 +47,8 @@ function Member(props) {
               <form
                 id="article-form"
                 action={`/private/posts/comment/${post._id}`}
-                method="POST">
-
+                method="POST"
+              >
                 <input type="text" name="comment" placeholder="Comment"></input>
                 <br />
                 <button type="submit">Submit</button>
@@ -57,7 +56,7 @@ function Member(props) {
               </form>
 
               {/*map of the comments that return the comment with the title */}
-                
+
               {post.comments.map((commentObj) => {
                 return (
                   <div>
@@ -66,18 +65,19 @@ function Member(props) {
                   </div>
                 );
               })}
-                          {/*prova*/}
+              {/*prova*/}
 
+              {String(props.member._id) === String(post.creator) ? (
+                <a href={`/private/updatepost/${post._id}`}>
+                  <button> Edit</button>
+                </a>
+              ) : null}
 
-                          {String(props.member._id) === String(post.creator) ?
-               <a href= "/private/postsettings"><button> Edit</button></a>
-              : null
-              }
-                                                                       
+              <form action={`/private/deletepost/${post._id}`} method="GET">
+                <button>Delete</button>
+              </form>
             </div>
-            
           );
-          
         })}
 
         <div>
