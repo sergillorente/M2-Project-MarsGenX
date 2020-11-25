@@ -57,7 +57,7 @@ function Profile(props) {
               <label>New Post</label>
             </li>
             <li>
-              <a>
+              <a href="/private/donation">
                 <img src="/images/Donation.jpg" alt="Donation icon"/>
               </a>
               <br />
