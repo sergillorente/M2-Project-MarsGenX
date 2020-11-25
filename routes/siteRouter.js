@@ -179,16 +179,25 @@ siteRouter.get("/donation", isLoggedIn, (req, res, next) => {
   });
 });
 
+
+// points added to member
+
 siteRouter.post("/donation", isLoggedIn, (req, res, next) => {
 
-  const { amount } = req.body;
+  
   const userId = req.session.currentUser._id;
+  const { points } = req.body;
 
-  Post.create({ amount, creator: userId })
-    .then((post) => {
-      res.redirect("Member");
-    })
-    .catch((err) => console.log(err));
+Member.findByIdAndUpdate(userId, {points})
+.then((memberWithPoints) => {
+   
+  const props = {thankYouMessage: "Thank you for your donation!"}
+  
+  res.render("Donation", props);
+})
+.catch((err) => console.log(err));
 });
+
+
 
 module.exports = siteRouter;

@@ -7,7 +7,7 @@ const memberSchema = new Schema (
         "email": {type: String, required: true, unique: true },
         "password": {type: String, required: true },
         "greeting": String, 
-        "points": {type: Number, min: 0, default: 0 },
+        "points": {type: Number, min: 0, default: 100 },
         "status": { type: String, enum: ['silver', 'gold', 'diamond' ] },
         "image": String
     }

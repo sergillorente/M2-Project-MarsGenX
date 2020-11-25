@@ -3,7 +3,7 @@ const Layout = require('./Layout')
 
 
 
-function Donation() {
+function Donation(props) {
   return (
     <Layout title="Donation">
       <header>
@@ -24,7 +24,7 @@ function Donation() {
         <form id="donation-form" action="donation" method="POST">
           <label>Your donation:</label>
             <br/>
-            <input type="text" name="amount" placeholder="1€ = 10pts"></input>
+            <input type="text" name="points" placeholder="1€ = 10pts"></input>
             <br/>
             <button type="submit">Donate</button>
         </form>
