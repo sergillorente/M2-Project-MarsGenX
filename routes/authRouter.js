@@ -91,7 +91,7 @@ authRouter.post("/login", (req, res, next) => {
 
   Member.findOne({ email })
     .then((member) => {
-    if (!email) {
+    if (!member) {
       // If the user by the given email was not found, send error message
       const props = { errorMessage: "The user does not exist" };
 

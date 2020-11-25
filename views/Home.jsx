@@ -19,13 +19,13 @@ function Home() {
         <ul>
 
           <li>
-            <a>
+            <a href="/auth/signup">
               <button type="submit" >Sign up</button>
             </a>
             <br/>
           </li>
           <li>
-            <a>
+            <a href="/auth/login">
               <button type="submit" >Login</button>
             </a>
             <br/>

@@ -42,7 +42,9 @@ siteRouter.post("/posts/add", isLoggedIn, parser.single('image'), (req, res, nex
   const { title, text, image } = req.body;
 
   let imageUrl;
-  if (req.file) imageUrl = req.file.secure_url;
+  if (req.file) {
+    imageUrl = req.file.secure_url;
+  }
 
   const userId = req.session.currentUser._id;
 
@@ -93,16 +95,21 @@ siteRouter.get("/updatepost/:postId", isLoggedIn, (req, res, next) => {
 
 siteRouter.post("/updatepost/:postid", isLoggedIn, parser.single("image"), (req, res, next) => {
   // getting the values coming from the form inputs
-  const { title, text, image } = req.body;
+  const { title, text } = req.body;
 
   let imageUrl;
+  if (req.file) {
+    imageUrl = req.file.secure_url;
+  } 
 
-  if (req.file) imageUrl = req.file.secure_url;
-  
-  const userId = req.session.currentUser._id; // a cookie for the identification of the member (by its ID)
   const postId = req.params.postid;
 
-  Post.findByIdAndUpdate(postId, { title, text, image: imageUrl })
+  let update = { title, text }
+  if (imageUrl) {
+    update.image = imageUrl
+  }
+
+  Post.findByIdAndUpdate(postId, update)
     .then((post) => {
       res.redirect("/private/member");
     })
