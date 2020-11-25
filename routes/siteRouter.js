@@ -1,5 +1,6 @@
 const express = require("express");
 const siteRouter = express.Router();
+const parser = require("./../config/cloudinary");
 
 const members = require("../bin/members-mock-data");
 const Member = require("../models/Member.model");
@@ -122,11 +123,10 @@ if (creator === userId) {
 
 
 
-siteRouter.delete("/posts/delete", isLoggedIn, (req, res, next) => {
-  const { title, text, image } = req.body;
-  const userId = req.session.currentUser._id;
+siteRouter.get("/deletepost/:postId", isLoggedIn, (req, res, next) => {
+  const postId = req.params.postId;
 
-  Post.delete({ title, text, image, creator: userId })
+  Post.findByIdAndDelete(postId)
     .then((post) => {
       res.redirect("/private/member");
     })
@@ -192,14 +192,19 @@ siteRouter.post("/donation", isLoggedIn, (req, res, next) => {
 
 // postsettings routes
 
-siteRouter.post("/posts/update/:postid", isLoggedIn, (req, res, next) => {
+siteRouter.post("/updatepost/:postid", isLoggedIn, parser.single("image"), (req, res, next) => {
   // getting the values coming from the form inputs
 const { title, text, image } = req.body;
+
+let imageUrl;
+if (req.file) imageUrl = req.file.secure_url;
+
+console.log("updating", req.body);
 
 const userId = req.session.currentUser._id; // a cookie for the identification of the member (by its ID)
 
 const postId = req.params.postid;
-Post.findByIdAndUpdate(postId, { title, text, image })
+Post.findByIdAndUpdate(postId, { title, text, image: imageUrl })
   .then((post) => {
     res.redirect("/private/member");
   })
@@ -209,8 +214,13 @@ Post.findByIdAndUpdate(postId, { title, text, image })
 
 
 
-siteRouter.get("/postsettings", isLoggedIn, (req, res, next) => {
-  res.render("postsettings");
+siteRouter.get("/updatepost/:postId", isLoggedIn, (req, res, next) => {
+  const postId = req.params.postId
+
+
+  const props = { postId: postId };
+
+  res.render("UpdatePost", props);
 })
 
 
