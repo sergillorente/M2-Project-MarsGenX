@@ -16,6 +16,7 @@ const isLoggedIn = require("./../utils/isLoggedIn");
 // Member Page routes
 
 // GET   /private/member
+
 siteRouter.get("/member", isLoggedIn, (req, res, next) => {
   const userId = req.session.currentUser._id; // Creation of the cookie for each member
 
