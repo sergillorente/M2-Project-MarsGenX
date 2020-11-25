@@ -85,21 +85,21 @@ function Member(props) {
         <footer>
           <ul>
             <li>
-              <a>
+              <a href="/private/profile">
                 <img src="/images/NewPost.png" alt="New post icon" />
               </a>
               <br />
               <label>New Post</label>
             </li>
             <li>
-              <a>
+              <a href="/private/donation">
                 <img src="/images/Donation.jpg" alt="Donation icon"/>
               </a>
               <br />
               <label>Donate</label>
             </li>
             <li>
-              <a>
+              <a href="/private/donation">
                 <img src="/images/Profile.png" alt="Profile icon" />
               </a>
               <br />
