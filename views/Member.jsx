@@ -15,7 +15,8 @@ function Member(props) {
   return (
     <Layout title="Member">
       <header>
-        <img href="../public/images/main-logo.png" />
+        <img src='/images/main-logo.png' />
+        {/* <img src='https://res.cloudinary.com/dvafexeww/image/upload/v1606255155/main-logo_sgbq7h.png' /> */}
         <div>
           {props.member.image}
           {props.member.points}
@@ -29,10 +30,6 @@ function Member(props) {
       <main>
         <h1>Member Page</h1>
         {props.allPosts.map((post, i) => {
-          console.log(post);
-          console.log(typeof post.creator);
-          console.log(typeof props.member._id);
-          console.log(props.member._id === String(post.creator));
           return (
             <div className="article">
               <div>
@@ -72,6 +69,9 @@ function Member(props) {
                   <button> Edit</button>
                 </a>
               ) : null}
+              
+              {/* Link the AddPost page */}
+              
 
               <form action={`/private/deletepost/${post._id}`} method="GET">
                 <button>Delete</button>
@@ -79,30 +79,9 @@ function Member(props) {
             </div>
           );
         })}
-
-        <div>
-          <div>
-            <hr />
-            <h1>Community Posts</h1>
-          </div>
-
-          <button type="button">Create Post</button>
-          {/*We need to create an action to allow this button to dropdown the form*/}
-          <form id="member-post-form" action="/private/posts/add" method="POST">
-            <input type="text" name="title" placeholder="Title"></input>
-            <br />
-            <input
-              type="text"
-              name="text"
-              placeholder="Write your post"
-            ></input>
-            <br />
-            <input type="file" accept="image/*" name="image" id="file"></input>
-            {/*<input type="file" name="image" placeholder="choose your image"></input>*/}
-            <button type="submit">Add Post</button>{" "}
-            {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
-          </form>
-        </div>
+        <form action={'/private/posts/add/'} method="GET" >
+                <button>Add New Post</button>
+              </form>
 
         <footer>
           <ul>

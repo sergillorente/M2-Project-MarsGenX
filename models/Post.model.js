@@ -5,8 +5,8 @@ const postSchema = new Schema (
     {
         "title": String,
         "text": String,
-        "likes": [ { type: mongoose.SchemaTypes.ObjectId, ref: "Member" }  ],
         "image": String,
+        "likes": [ { type: mongoose.SchemaTypes.ObjectId, ref: "Member" }  ],
         "comments": [
             {
                 member: { type: mongoose.SchemaTypes.ObjectId, ref: "Member" },
