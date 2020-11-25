@@ -20,6 +20,11 @@ function Member(props) {
         <div>
           {props.member.image}
           {props.member.points}
+          {
+            props.errorMessage
+          ? <div className = "error-message">{props.errorMessage}</div>
+          : null
+          }
           {props.member.status}
         </div>
         <a href="/auth/logout">

@@ -8,11 +8,11 @@ function Donation(props) {
     <Layout title="Donation">
       <header>
         <img src='/images/main-logo.png' />
-        {/* <div>
-        {props.member.image}
+         <div>
+       {/* {props.member.image}*/}
         {props.member.points}
         {props.member.status}
-        </div> */}
+        </div>
         <a href ="/auth/logout">
           <button>Log out</button>
         </a>
