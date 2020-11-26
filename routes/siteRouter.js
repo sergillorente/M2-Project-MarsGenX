@@ -33,7 +33,7 @@ siteRouter.get("/member", isLoggedIn, (req, res, next) => {
 
 siteRouter.get('/posts/add/', isLoggedIn, (req, res, next) => {
 
-  
+
   res.render("AddPost");
 })
 
@@ -83,13 +83,13 @@ siteRouter.post("/posts/update/:postId", isLoggedIn, (req, res, next) => {
 
 siteRouter.get("/updatepost/:postId", isLoggedIn, (req, res, next) => {
   const postId = req.params.postId
-  
+
   Post.findById(postId)
-  .then((post) => {
+    .then((post) => {
       const props = { postId: postId, post };
       res.render("UpdatePost", props);
     })
-    .catch((error) => console.log(error) )
+    .catch((error) => console.log(error))
 })
 
 
@@ -100,7 +100,7 @@ siteRouter.post("/updatepost/:postid", isLoggedIn, parser.single("image"), (req,
   let imageUrl;
   if (req.file) {
     imageUrl = req.file.secure_url;
-  } 
+  }
 
   const postId = req.params.postid;
 
@@ -191,18 +191,46 @@ siteRouter.get("/donation", isLoggedIn, (req, res, next) => {
 
 siteRouter.post("/donation", isLoggedIn, (req, res, next) => {
 
-  
-  const userId = req.session.currentUser._id;
-  const { points } = req.body;
 
-Member.findByIdAndUpdate(userId, {points})
-.then((memberWithPoints) => {
-   
-  const props = {thankYouMessage: "Thank you for your donation!"}
-  
-  res.render("Donation", props);
-})
-.catch((err) => console.log(err));
+  const userId = req.session.currentUser._id;
+  const donationPoints = req.body.points;
+
+  Member.findByIdAndUpdate(
+    userId,
+    { $inc: { points: donationPoints } },
+    { new: true }
+  )
+    .then((memberWUpdatedPoints) => {
+      console.log(memberWUpdatedPoints)
+      
+
+      const oldStatus = memberWUpdatedPoints.status;
+      const updateQuery = { status: oldStatus }; // {status: 'gold'}
+
+      if (memberWUpdatedPoints.points > 50) {
+        updateQuery.status = 'gold';
+      }
+      else if (memberWUpdatedPoints.points > 100) {
+        updateQuery.status = 'diamond';
+      }
+
+      // update status
+      Member.findByIdAndUpdate(
+        userId,
+        updateQuery,
+        { new: true }
+      )
+      .then((member) => {
+        const props = {
+          thankYouMessage: "Thank you for your donation!",
+          member
+        }
+        res.render("Donation", props);
+      })
+      
+      
+    })
+    .catch((err) => console.log(err));
 });
 
 

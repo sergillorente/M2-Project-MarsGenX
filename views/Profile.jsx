@@ -7,11 +7,11 @@ function Profile(props) {
   return (
     <Layout title="Profile">
       <header>
-        <img src='/images/main-logo.png' />
-        <div>
-        { /*{props.member.image}
-        {props.member.points}
-        {props.member.status}  */}
+      <img src='/images/main-logo.png' />
+         <div>
+          <img src={props.member.image} />
+          <p>Your current points are: {props.member.points}</p>
+          <p>{props.member.status}</p>
         </div>
         <a href ="/auth/logout">
           <button>Log out</button>
@@ -23,22 +23,24 @@ function Profile(props) {
 
       <label>Username:</label>
       <br/>
-      <input type="text" name="username" placeholder="Type in here" />
+      <input type="text" name="username" defaultValue={props.member.username} placeholder="Type in here" />
       <br/>
 
       <label>Greetings:</label>
       <br/>
-      <input type='text' name="greeting" placeholder="Choose your greeting" />
+      <input type='text' name="greetings" defaultValue={props.member.greetings} placeholder="Choose your greeting" />
       <br/>
 
       <label>Profile picture:</label>
+      <br/>
+      <img src={props.member.image} />
       <br/>
       <input type="file" name="profilepic"/>
       <br/>
 
       <button type="submit" className="signup-button">Edit your account</button>
 
-
+      
       {
         props.errorMessage
         ? <div className = "error-message">{props.errorMessage}</div>

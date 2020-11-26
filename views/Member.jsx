@@ -15,17 +15,11 @@ function Member(props) {
   return (
     <Layout title="Member">
       <header>
-        <img src='/images/main-logo.png' />
-        {/* <img src='https://res.cloudinary.com/dvafexeww/image/upload/v1606255155/main-logo_sgbq7h.png' /> */}
-        <div>
+      <img src='/images/main-logo.png' />
+         <div>
           <img src={props.member.image} />
-          {props.member.points}
-          {
-            props.errorMessage
-          ? <div className = "error-message">{props.errorMessage}</div>
-          : null
-          }
-          {props.member.status}
+          <p>Your current points are: {props.member.points}</p>
+          <p>{props.member.status}</p>
         </div>
         <a href="/auth/logout">
           <button>Log out</button>
