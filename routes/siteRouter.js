@@ -166,7 +166,7 @@ siteRouter.get("/edit-profile", isLoggedIn, (req, res, next) => {
 
 siteRouter.post("/edit-profile", isLoggedIn, (req, res, next) => {
 
-  const { username, nickname, greeting, profilepic } = req.body;
+  const { username, greetings, profilepic } = req.body;
   const userId = req.session.currentUser._id;
 
   Post.create({ username, nickname, greeting, profilepic, creator: userId })
