@@ -149,9 +149,6 @@ siteRouter.post("/posts/comment/:postId", isLoggedIn, (req, res, next) => {
 
 // Profile routes
 
-siteRouter.get("/profile", isLoggedIn, (req, res, next) => {
-  res.render("profile");
-})
 siteRouter.get("/edit-profile", isLoggedIn, (req, res, next) => {
 
   const userId = req.session.currentUser._id;
@@ -164,14 +161,20 @@ siteRouter.get("/edit-profile", isLoggedIn, (req, res, next) => {
   });
 });
 
-siteRouter.post("/edit-profile", isLoggedIn, (req, res, next) => {
+siteRouter.post("/edit", isLoggedIn, (req, res, next) => {
 
   const { username, greetings, profilepic } = req.body;
   const userId = req.session.currentUser._id;
 
-  Post.create({ username, nickname, greeting, profilepic, creator: userId })
-    .then((post) => {
-      res.redirect("/edit/profile");
+  Member.findOneAndUpdate(userId,
+    username,
+    greetings,
+    profilepic,
+    { new: true }
+    )
+    .then((member) => {
+      const props = {profileUpdated: 'You have succesfully updated your profile!', member}
+      res.render("Profile", props);
     })
     .catch((err) => console.log(err));
 });
