@@ -5,7 +5,9 @@ function Login(props) {
   return (
     <Layout title="Login">
       <header>
-        <img src='/images/main-logo.png' />
+        <a href="/">
+          <img src='/images/main-logo.png' />
+        </a>
       </header>
 
       <h1>Login</h1>

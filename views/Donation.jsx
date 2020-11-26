@@ -9,14 +9,11 @@ function Donation(props) {
     <Layout title="Donation">
       <header>
         <img src='/images/main-logo.png' />
-         <div>
+        <div>
           <img src={props.member.image} />
           <p>Your current points are: {props.member.points}</p>
           <p>{props.member.status}</p>
         </div>
-        <a href ="/auth/logout">
-          <button>Log out</button>
-        </a>
       </header>
 
       <main>
@@ -24,16 +21,20 @@ function Donation(props) {
 
         <form id="donation-form" action="donation" method="POST">
           <label>Your donation:</label>
-            <br/>
-            <input type="text" name="points" placeholder="1€ = 10pts"></input>
-            <br/>
-            <button type="submit">Donate</button>
+          <br />
+          <input type="text" name="points" placeholder="1€ = 10pts"></input>
+          <br />
+          <button type="submit">Donate</button>
         </form>
         {
-            props.thankYouMessage
-          ? <div className = "thank-you-message">{props.thankYouMessage}</div>
-          : null
-          }
+          props.thankYouMessage
+            ? <div className="thank-you-message">{props.thankYouMessage}</div>
+            : null
+        }
+
+        <a href="/auth/logout">
+          <button>Log out</button>
+        </a>
 
         <footer>
 
@@ -43,14 +44,14 @@ function Donation(props) {
               <a href="/private/member">
                 <img src="/images/Member.png" alt="Member icon" />
               </a>
-              <br/>
+              <br />
               <label>Member Page</label>
             </li>
             <li>
               <a href="/private/edit-profile">
                 <img src="/images/Profile.png" alt="Profile icon" />
               </a>
-              <br/>
+              <br />
               <label>Profile</label>
             </li>
 

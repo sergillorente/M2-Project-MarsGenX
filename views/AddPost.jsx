@@ -8,15 +8,11 @@ function AddPost(props) {
         <Layout title="Add Post">
             <header>
                 <img src='/images/main-logo.png' />
-                {/* <img src='https://res.cloudinary.com/dvafexeww/image/upload/v1606255155/main-logo_sgbq7h.png' /> */}
-                {/* <div>
-                    {props.member.image}
-                    {props.member.points}
-                    {props.member.status}
-                </div> */}
-                <a href="/auth/logout">
-                    <button>Log out</button>
-                </a>
+                <div>
+                    <img src={props.member.image} />
+                    <p>Your current points are: {props.member.points}</p>
+                    <p>{props.member.status}</p>
+                </div>
             </header>
 
             <main>
@@ -32,10 +28,11 @@ function AddPost(props) {
                         <input type="text" name="text" placeholder="Write your post" />
                         <br />
                         <input type="file" name="image" />
-                        <br/>
+                        <br />
                         <button type="submit">Add Post</button>
                         {/* Button to submit the text you have written in the comment. It needs to be added to the article as well*/}
                     </form>
+
                 </div>
                 <footer>
                     <ul>

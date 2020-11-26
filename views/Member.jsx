@@ -14,15 +14,12 @@ function Member(props) {
   return (
     <Layout title="Member">
       <header>
-      <img src='/images/main-logo.png' />
-         <div>
+        <img src='/images/main-logo.png' />
+        <div>
           <img src={props.member.image} />
           <p>Your current points are: {props.member.points}</p>
           <p>{props.member.status}</p>
         </div>
-        <a href="/auth/logout">
-          <button>Log out</button>
-        </a>
       </header>
 
       <main>
@@ -67,18 +64,21 @@ function Member(props) {
                 </a>
               ) : null}
 
-              {/* Link the AddPost page */}
-
 
               <form action={`/private/deletepost/${post._id}`} method="GET">
                 <button>Delete</button>
               </form>
+
             </div>
           );
         })}
         <form action={'/private/posts/add/'} method="GET" >
           <button>Add New Post</button>
         </form>
+
+        <a href="/auth/logout">
+          <button>Log out</button>
+        </a>
 
         <footer>
           <ul>
@@ -91,7 +91,7 @@ function Member(props) {
             </li>
             <li>
               <a href="/private/donation">
-                <img src="/images/Donation.jpg" alt="Donation icon"/>
+                <img src="/images/Donation.jpg" alt="Donation icon" />
               </a>
               <br />
               <label>Donate</label>

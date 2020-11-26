@@ -8,9 +8,9 @@ function UpdatePost(props) {
       <header>
         <img src='/images/main-logo.png' />
         <div>
-          {/*{props.member.image}
-        {props.member.points}
-        {props.member.status}  */}
+          <img src={props.member.image} />
+          <p>Your current points are: {props.member.points}</p>
+          <p>{props.member.status}</p>
         </div>
       </header>
 
