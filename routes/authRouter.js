@@ -60,6 +60,7 @@ authRouter.post("/signup", parser.single("profilepic"), (req, res, next) => {
 
       Member.create({ email: email, password: hashedPassword, image: imageUrl })
         .then((createdMember) => {
+          console.log(createdMember)
           req.session.currentUser = createdMember;
           res.redirect("/private/member"); // it should redirect to the member page
         })
@@ -103,7 +104,7 @@ authRouter.post("/login", (req, res, next) => {
 
     if (passwordCorrect) {
       // Create the session - which also triggers the creation of the cookie
-      req.session.currentMember = member;
+      req.session.currentUser = member;
 
       res.redirect("/private/member"); 
     } else {

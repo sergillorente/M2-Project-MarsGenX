@@ -8,7 +8,7 @@ function Profile(props) {
     <Layout title="Profile">
       <header>
       <img src='/images/main-logo.png' />
-         <div>
+        <div>
           <img src={props.member.image} />
           <p>Your current points are: {props.member.points}</p>
           <p>{props.member.status}</p>
@@ -19,7 +19,7 @@ function Profile(props) {
       </header>
       
       <h1>Profile settings</h1>
-      <form id="form-setting" action="editprofile" method="POST" encType="multipart/form-data">
+      <form id="form-setting" action="/private/editprofile" method="POST" encType="multipart/form-data">
 
       <label>Username:</label>
       <br/>
