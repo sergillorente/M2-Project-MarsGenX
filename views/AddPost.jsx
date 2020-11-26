@@ -3,7 +3,7 @@ const React = require("react");
 const Layout = require("./Layout");
 
 function AddPost(props) {
-    // props.member
+    console.log(props)
     return (
         <Layout title="Add Post">
             <header>

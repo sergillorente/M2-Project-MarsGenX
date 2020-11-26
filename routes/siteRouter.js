@@ -18,7 +18,7 @@ siteRouter.get("/member", isLoggedIn, (req, res, next) => {
 
   const userId = req.session.currentUser._id; // Creation of the cookie for each member
 
-  Member.findOne({ _id: userId }) // You are looking for an specific member by his/her id from all of those who are in the DB
+  Member.findOne({ _id: userId }) // You are looking for a specific member by his/her id from all of those who are in the DB
     .then((member) => {
       Post.find()
         .populate('comments.member')
@@ -31,11 +31,17 @@ siteRouter.get("/member", isLoggedIn, (req, res, next) => {
 
 // create a post
 
-siteRouter.get('/posts/add/', isLoggedIn, (req, res, next) => {
-
-
-  res.render("AddPost");
+siteRouter.get("/posts/add", isLoggedIn, (req,res,next) => {
+  const userId = req.session.currentUser._id;
+  Member.findOne({ _id: userId })
+  .then((member) => {
+    const props = { member: member};
+    res.render("AddPost", props);
+  })
 })
+
+
+
 
 siteRouter.post("/posts/add", isLoggedIn, parser.single('image'), (req, res, next) => {
   // getting the values coming from the form inputs
