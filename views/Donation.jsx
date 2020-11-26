@@ -10,15 +10,9 @@ function Donation(props) {
       <header>
         <img src='/images/main-logo.png' />
          <div>
-<<<<<<< HEAD
-       {/* {props.member.image}*/}
-        {props.points}
-        {/*  {props..status} */}
-=======
           <img src={props.member.image} />
           <p>Your current points are: {props.member.points}</p>
           <p>{props.member.status}</p>
->>>>>>> 2be51fdd36e7dae9a8bfa525c55a9d59a42d21cd
         </div>
         <a href ="/auth/logout">
           <button>Log out</button>
