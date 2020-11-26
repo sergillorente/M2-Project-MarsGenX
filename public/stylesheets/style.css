@@ -132,3 +132,10 @@ header p {
   margin-top: 14px;
   /* We need to define  a cercle form to the image */
 }
+
+/* Footer */
+.private-footer {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}

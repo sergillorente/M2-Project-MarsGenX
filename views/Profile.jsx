@@ -6,8 +6,8 @@ const Layout = require('./Layout');
 function Profile(props) {
   return (
     <Layout title="Profile">
-      <header className = "header">
-      <img className="logoImage" src='/images/main-logo.png' />
+      <header className="header">
+        <img className="logoImage" src='/images/main-logo.png' />
         <div className="margin-profile-p">
           <img className="profileImage" src={props.member.image} />
           <p>Points: {props.member.points}</p>
@@ -72,6 +72,13 @@ function Profile(props) {
             </a>
             <br />
             <label>Member</label>
+          </li>
+          <li>
+            <a href="/private/edit-profile">
+              <img src="/images/profile-user.png" alt="Profile icon" />
+            </a>
+            <br />
+            <label>Profile</label>
           </li>
         </ul>
       </footer>

@@ -7,7 +7,7 @@ function Donation(props) {
   console.log("what is in the props member", props);
   return (
     <Layout title="Donation">
-      <header className = "header">
+      <header className="header">
         <img className="logoImage" src='/images/main-logo.png' />
         <div className="margin-profile-p">
           <img className="profileImage" src={props.member.image} />
@@ -37,15 +37,27 @@ function Donation(props) {
         </a>
 
         <footer>
-
           <ul>
-
             <li>
-              <a href="/private/member">
-                <img src="/images/membership.png" alt="Member icon" />
+              <a href="/private/posts/add">
+                <img src="/images/new.png" alt="New post icon" />
               </a>
               <br />
-              <label>Member Page</label>
+              <label>New Post</label>
+            </li>
+            <li>
+              <a href="/private/donation">
+                <img src="/images/donation.png" alt="Donation icon" />
+              </a>
+              <br />
+              <label>Donate</label>
+            </li>
+            <li>
+              <a href="/private/member">
+                <img src="/images/membership.png" alt="Profile icon" />
+              </a>
+              <br />
+              <label>Member</label>
             </li>
             <li>
               <a href="/private/edit-profile">
@@ -54,7 +66,6 @@ function Donation(props) {
               <br />
               <label>Profile</label>
             </li>
-
           </ul>
         </footer>
       </main>

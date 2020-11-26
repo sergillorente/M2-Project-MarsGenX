@@ -13,8 +13,8 @@ const Layout = require("./Layout");
 function Member(props) {
   return (
     <Layout title="Member">
-      <header className = "header">
-        <img  className="logoImage" src='/images/main-logo.png' />
+      <header className="header">
+        <img className="logoImage" src='/images/main-logo.png' />
         <div className="margin-profile-p">
           <img className="profileImage" src={props.member.image} />
           <p>Your current points are: {props.member.points}</p>
@@ -80,7 +80,7 @@ function Member(props) {
           <button>Log out</button>
         </a>
 
-        <footer>
+        <footer className="private-footer">
           <ul>
             <li>
               <a href="/private/posts/add">
@@ -95,6 +95,13 @@ function Member(props) {
               </a>
               <br />
               <label>Donate</label>
+            </li>
+            <li>
+              <a href="/private/member">
+                <img src="/images/membership.png" alt="Profile icon" />
+              </a>
+              <br />
+              <label>Member</label>
             </li>
             <li>
               <a href="/private/edit-profile">

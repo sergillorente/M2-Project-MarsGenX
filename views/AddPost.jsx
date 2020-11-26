@@ -5,10 +5,10 @@ const Layout = require("./Layout");
 function AddPost(props) {
     return (
         <Layout title="Add Post">
-            <header className = "header">
+            <header className="header">
                 <img className="logoImage" src='/images/main-logo.png' />
                 <div className="margin-profile-p">
-                    <img  className="profileImage" src={props.member.image} />
+                    <img className="profileImage" src={props.member.image} />
                     <p>Your current points are: {props.member.points}</p>
                     <p>{props.member.status}</p>
                 </div>
@@ -36,28 +36,29 @@ function AddPost(props) {
                 <footer>
                     <ul>
                         <li>
-                            <a>
-                                <img
-                                    src="/images/NewPost.png"
-                                    alt="New post icon"
-                                />
+                            <a href="/private/posts/add">
+                                <img src="/images/new.png" alt="New post icon" />
                             </a>
                             <br />
                             <label>New Post</label>
                         </li>
                         <li>
-                            <a>
-                                <img
-                                    src="/images/Donation.jpg"
-                                    alt="Donation icon"
-                                />
+                            <a href="/private/donation">
+                                <img src="/images/donation.png" alt="Donation icon" />
                             </a>
                             <br />
                             <label>Donate</label>
                         </li>
                         <li>
-                            <a>
-                                <img src="/images/Profile.png" alt="Profile icon" />
+                            <a href="/private/member">
+                                <img src="/images/membership.png" alt="Profile icon" />
+                            </a>
+                            <br />
+                            <label>Member</label>
+                        </li>
+                        <li>
+                            <a href="/private/edit-profile">
+                                <img src="/images/profile-user.png" alt="Profile icon" />
                             </a>
                             <br />
                             <label>Profile</label>
