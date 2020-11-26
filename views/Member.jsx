@@ -90,7 +90,7 @@ function Member(props) {
         <footer>
           <ul>
             <li>
-              <a href="/private/profile">
+              <a href="/private/posts/add">
                 <img src="/images/NewPost.png" alt="New post icon" />
               </a>
               <br />
@@ -104,7 +104,7 @@ function Member(props) {
               <label>Donate</label>
             </li>
             <li>
-              <a href="/private/donation">
+              <a href="/private/edit-profile">
                 <img src="/images/Profile.png" alt="Profile icon" />
               </a>
               <br />
