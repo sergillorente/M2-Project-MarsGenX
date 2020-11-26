@@ -161,13 +161,23 @@ siteRouter.get("/edit-profile", isLoggedIn, (req, res, next) => {
   });
 });
 
-siteRouter.post("/editprofile", isLoggedIn, (req, res, next) => {
+siteRouter.post("/editprofile", isLoggedIn, parser.single("profilepic"), (req, res, next) => {
 
-  const { username, greetings, profilepic } = req.body;
+  const { username, greetings } = req.body;
   const userId = req.session.currentUser._id;
+ 
+const update = { username: username, greetings: greetings };
 
-  Member.findOneAndUpdate(userId, { $set: { username: username, greetings: greetings }})
-    .then((member) => {
+ 
+  if (req.file) {
+    update.image = req.file.secure_url
+  };
+  
+
+  Member.findByIdAndUpdate(userId, update, {new: true})
+ 
+  .then((member) => {
+    console.log(member)
       const props = {profileUpdated: 'You have succesfully updated your profile!', member}
       res.render("Profile", props);
     })
