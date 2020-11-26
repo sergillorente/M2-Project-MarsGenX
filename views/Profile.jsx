@@ -8,10 +8,10 @@ function Profile(props) {
     <Layout title="Profile">
       <header className = "header">
       <img className="logoImage" src='/images/main-logo.png' />
-        <div>
+        <div className="margin-profile-p">
           <img className="profileImage" src={props.member.image} />
-          <p>Your current points are: {props.member.points}</p>
-          <p>{props.member.status}</p>
+          <p>Points: {props.member.points}</p>
+          <p>Status: {props.member.status}</p>
         </div>
       </header>
 
@@ -53,7 +53,7 @@ function Profile(props) {
       <footer>
         <ul>
           <li>
-            <a>
+            <a href="/private/posts/add">
               <img src="/images/NewPost.png" alt="New post icon" />
             </a>
             <br />

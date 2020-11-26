@@ -98,23 +98,35 @@ table {
   
 /* Header of all private routes */
 
-.header{
+.header {
   display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	justify-content: space-around;
 	align-items: center;
-	align-content: space-between;
 }
 
+header p {
+  color: rgb(216,193,107);
+  margin-top: 12px;
+}
 /* image logo */
 
 .logoImage {
-  max-width: 15%;
+  max-width: 34%;
   height: auto;
+  top: 22px;
+}
+.margin-profile-p {
+  text-align: center;
+  margin-left: 90px;
+  letter-spacing: 1px;
+  font-size: 18px;
 }
 
+
 .profileImage {
-  max-width: 15%;
+  max-width: 73%;
   height: auto;
+  margin-top: 14px;
+  /* We need to define  a cercle form to the image */
 }
