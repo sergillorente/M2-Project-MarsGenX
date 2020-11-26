@@ -96,4 +96,25 @@ table {
     margin-top: 115px;
   }
   
-  
+/* Header of all private routes */
+
+.header{
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-between;
+}
+
+/* image logo */
+
+.logoImage {
+  max-width: 15%;
+  height: auto;
+}
+
+.profileImage {
+  max-width: 15%;
+  height: auto;
+}

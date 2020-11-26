@@ -6,10 +6,10 @@ const Layout = require('./Layout');
 function Profile(props) {
   return (
     <Layout title="Profile">
-      <header>
-      <img src='/images/main-logo.png' />
+      <header className = "header">
+      <img className="logoImage" src='/images/main-logo.png' />
         <div>
-          <img src={props.member.image} />
+          <img className="profileImage" src={props.member.image} />
           <p>Your current points are: {props.member.points}</p>
           <p>{props.member.status}</p>
         </div>
