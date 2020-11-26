@@ -4,7 +4,7 @@ const Layout = require("./Layout");
 function UpdatePost(props) {
   // props =  { postId: postId }
   return (
-    <Layout title="Profile">
+    <Layout title="Update Post">
       <header>
         <img src='/images/main-logo.png' />
         <div>

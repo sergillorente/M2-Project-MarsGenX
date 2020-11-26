@@ -5,7 +5,7 @@ const Layout = require("./Layout");
 function AddPost(props) {
     // props.member
     return (
-        <Layout title="Member">
+        <Layout title="Add Post">
             <header>
                 <img src='/images/main-logo.png' />
                 {/* <img src='https://res.cloudinary.com/dvafexeww/image/upload/v1606255155/main-logo_sgbq7h.png' /> */}
