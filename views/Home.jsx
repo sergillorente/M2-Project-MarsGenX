@@ -35,6 +35,7 @@ function Home() {
         
       <footer className="home-footer">
         <p>MarsGenX © 2020</p>
+        <p>https://www.flaticon.com/authors/freepik</p>
       </footer>
         
     </Layout>

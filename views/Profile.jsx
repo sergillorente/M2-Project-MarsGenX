@@ -54,21 +54,21 @@ function Profile(props) {
         <ul>
           <li>
             <a href="/private/posts/add">
-              <img src="/images/NewPost.png" alt="New post icon" />
+              <img src="/images/new.png" alt="New post icon" />
             </a>
             <br />
             <label>New Post</label>
           </li>
           <li>
             <a href="/private/donation">
-              <img src="/images/Donation.jpg" alt="Donation icon" />
+              <img src="/images/donation.png" alt="Donation icon" />
             </a>
             <br />
             <label>Donate</label>
           </li>
           <li>
             <a href="/private/member">
-              <img src="/images/Member.png" alt="Profile icon" />
+              <img src="/images/membership.png" alt="Profile icon" />
             </a>
             <br />
             <label>Member</label>

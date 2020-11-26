@@ -92,8 +92,10 @@ table {
   /* Footer */
   .home-footer{
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     margin-top: 115px;
+    text-align: center;
   }
   
 /* Header of all private routes */

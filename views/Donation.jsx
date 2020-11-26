@@ -42,14 +42,14 @@ function Donation(props) {
 
             <li>
               <a href="/private/member">
-                <img src="/images/Member.png" alt="Member icon" />
+                <img src="/images/membership.png" alt="Member icon" />
               </a>
               <br />
               <label>Member Page</label>
             </li>
             <li>
               <a href="/private/edit-profile">
-                <img src="/images/Profile.png" alt="Profile icon" />
+                <img src="/images/profile-user.png" alt="Profile icon" />
               </a>
               <br />
               <label>Profile</label>
