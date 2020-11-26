@@ -19,7 +19,7 @@ function Profile(props) {
       </header>
       
       <h1>Profile settings</h1>
-      <form id="form-setting" action="edit" method="POST" encType="multipart/form-data">
+      <form id="form-setting" action="editprofile" method="POST" encType="multipart/form-data">
 
       <label>Username:</label>
       <br/>

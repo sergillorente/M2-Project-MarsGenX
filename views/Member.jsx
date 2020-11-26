@@ -11,7 +11,6 @@ const Layout = require("./Layout");
 // ReactDOM.render(element, document.body)
 
 function Member(props) {
-  console.log(props);
   return (
     <Layout title="Member">
       <header>

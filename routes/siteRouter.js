@@ -161,22 +161,17 @@ siteRouter.get("/edit-profile", isLoggedIn, (req, res, next) => {
   });
 });
 
-siteRouter.post("/edit", isLoggedIn, (req, res, next) => {
+siteRouter.post("/editprofile", isLoggedIn, (req, res, next) => {
 
   const { username, greetings, profilepic } = req.body;
   const userId = req.session.currentUser._id;
 
-  Member.findOneAndUpdate(userId,
-    username,
-    greetings,
-    profilepic,
-    { new: true }
-    )
+  Member.findOneAndUpdate(userId, { $set: { username: username, greetings: greetings }})
     .then((member) => {
       const props = {profileUpdated: 'You have succesfully updated your profile!', member}
       res.render("Profile", props);
     })
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err))
 });
 
 // Donation routes
