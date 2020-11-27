@@ -65,15 +65,6 @@ siteRouter.post("/posts/add", isLoggedIn, parser.single('image'), (req, res, nex
 // to update the current post
 
 siteRouter.post("/posts/update/:postId", isLoggedIn, (req, res, next) => {
-
-  const userId = req.session.currentUser._id;
-  const creatorPost = req.session.post
-
-  Post.find()
-    .populate('creator')
-})
-
-siteRouter.post("/posts/update/:postId", isLoggedIn, (req, res, next) => {
   // getting the values coming from the form inputs
   const { title, text, image } = req.body;
   const userId = req.session.currentUser._id; // a cookie for the identification of the member (by its ID)
@@ -89,11 +80,15 @@ siteRouter.post("/posts/update/:postId", isLoggedIn, (req, res, next) => {
 
 siteRouter.get("/updatepost/:postId", isLoggedIn, (req, res, next) => {
   const postId = req.params.postId
-
+  const userId = req.session.currentUser._id;
   Post.findById(postId)
     .then((post) => {
-      const props = { postId: postId, post };
-      res.render("UpdatePost", props);
+      Member.findById(userId)
+      .then((member) => {
+        const props = { postId: postId, post, userId, member };
+        res.render("UpdatePost", props);
+      })
+      .catch((error) => console.log(error))
     })
     .catch((error) => console.log(error))
 })

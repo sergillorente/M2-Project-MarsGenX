@@ -51,7 +51,7 @@ function Profile(props) {
       </form>
 
       <a href="/auth/logout">
-        <button>Log out</button>
+        <button className="logout-button">Log out</button>
       </a>
 
       <footer>

@@ -198,7 +198,8 @@ table {
   display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	align-items: center;
+  align-items: center;
+  border-bottom: 3px solid white;
 }
 
 header p {
@@ -244,6 +245,7 @@ header p {
   text-align: center;
   font-weight: bold;
   font-size: xx-large;
+  color: rgb(233,234,218);
 }
 
 #add-post-form {
@@ -258,12 +260,25 @@ header p {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  color: white;
   }
 
   .otherText{
     font-weight: bold;
   }
 
-  .donLogout{
-    margin-bottom: 30px;
+  .logout-button {
+    position: relative;
+    top: 450px;
+    left: 155px;
+  }
+
+  .delete-button {
+    position: relative;
+    top: 80px;
+    left: 155px;
+  }
+
+  .update-icons {
+    color: white;
   }

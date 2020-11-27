@@ -39,7 +39,7 @@ function Donation(props) {
         }
 
         <a className= "donLogout" href="/auth/logout">
-          <button>Log out</button>
+          <button className="logout-button">Log out</button>
         </a>
 
         <footer>
