@@ -9,12 +9,12 @@ function AddPost(props) {
                 <img className="logoImage" src='/images/main-logo.png' />
                 <div className="margin-profile-p">
                     <img className="profileImage" src={props.member.image} />
-                    <p>Your current points are: {props.member.points}</p>
-                    <p>{props.member.status}</p>
+                    <p>Points: {props.member.points}</p>
+                    <p>Status: {props.member.status}</p>
                 </div>
             </header>
 
-            <main>
+            <main className= "textColor">
                 <div>
                     <div>
                         <hr />

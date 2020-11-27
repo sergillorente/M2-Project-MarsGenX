@@ -15,6 +15,7 @@ function Profile(props) {
         </div>
       </header>
 
+      <main className= "textColor">
       <h1>Profile settings</h1>
       <form id="form-setting" action="/private/editprofile" method="POST" encType="multipart/form-data">
 
@@ -82,7 +83,7 @@ function Profile(props) {
           </li>
         </ul>
       </footer>
-
+      </main>
     </Layout>
   )
 
