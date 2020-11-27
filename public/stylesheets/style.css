@@ -54,9 +54,13 @@ table {
   /* HOME PAGE */
 
   /* Header */
+  .header-home {
+    height: 250px;
+  }
   .home-logo {
-    max-width: 18%;
-    padding: 41%;
+    max-width: 40%;
+    margin-left: 111px;
+    margin-top: 47px;
   }
 
   /* Main */
@@ -94,10 +98,97 @@ table {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-top: 115px;
+    margin-top: 180px;
     text-align: center;
+    color: orange
   }
   
+/* SIGN UP PAGE*/
+
+.logo-signup {
+  max-width: 32%;
+  height: auto;
+  margin-left: 33%;
+  margin-top: 7%;
+}
+
+.signup-title {
+  margin-left: 35%;
+  font-size: 34px;
+  margin-top: 10%;
+  color: rgb(233,234,218);
+}
+
+#form-signup {
+  margin-top: 77px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  color: rgb(216,193,107);
+  font-size: 19px;
+  letter-spacing: 1px;
+}
+
+#file-form {
+  margin-left: 100px;
+}
+
+#create-your-account-button {
+  margin-top: 55px;
+}
+
+.account-message-signup {
+  margin-top: 58px;
+  color: orange;
+}
+
+.login-link {
+  color: white;
+}
+
+/* LOGIN PAGE*/
+
+.logo-login {
+  max-width: 32%;
+  height: auto;
+  margin-left: 33%;
+  margin-top: 7%;
+}
+
+.login-title {
+  margin-left: 38%;
+  font-size: 34px;
+  margin-top: 10%;
+  color: rgb(233,234,218);
+}
+
+#form-login {
+  margin-top: 77px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  color: rgb(216,193,107);
+  font-size: 19px;
+  letter-spacing: 1px;
+}
+
+.login-button {
+  margin-top: 32px;
+}
+
+.signup-link {
+  color:white;
+}
+
+.account-message-login {
+  margin-top: 118px;
+  color: orange;
+}
+
+
+
 /* Header of all private routes */
 
 .header {
@@ -133,9 +224,11 @@ header p {
   /* We need to define  a cercle form to the image */
 }
 
-/* Footer */
-.private-footer {
+/* Footer of all private routes*/
+.private-ul {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 139%;
   text-align: center;
 }

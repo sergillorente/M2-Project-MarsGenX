@@ -7,11 +7,11 @@ function Signup(props) {
     <Layout title="Signup"> 
     <header>
       <a href="/">
-        <img src='/images/main-logo.png' />
+        <img className="logo-signup" src='/images/main-logo.png' />
       </a>
     </header>
     
-    <h1>Sign up</h1>
+    <h1 className="signup-title">Sign up</h1>
       <form id="form-signup" action="signup" method="POST" encType="multipart/form-data">
         <label>Email: </label>
           <br/>
@@ -25,18 +25,18 @@ function Signup(props) {
 
           <label>Profile picture: </label>
           <br/>
-          <input type="file" name="profilepic"/>
+          <input type="file" name="profilepic" id="file-form"/>
           <br />
           
-        <button type="submit" className="signup-button">Create your account</button>
+        <button type="submit" className="signup-button" id="create-your-account-button">Create your account</button>
 
           {
             props.errorMessage
           ? <div className = "error-message">{props.errorMessage}</div>
           : null
           }
-          <p className="account-message">
-                Do you already have an account? <a href="/auth/login">Log in</a>
+          <p className="account-message-signup">
+                Do you already have an account? <a href="/auth/login" className="login-link">Log in</a>
           </p>
 
       </form>

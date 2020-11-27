@@ -40,7 +40,7 @@ function UpdatePost(props) {
       </form>
 
       <footer>
-        <ul>
+        <ul className="private-ul">
           <li>
             <a href="/private/posts/add">
               <img src="/images/new.png" alt="New post icon" />

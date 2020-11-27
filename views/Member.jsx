@@ -80,8 +80,8 @@ function Member(props) {
           <button>Log out</button>
         </a>
 
-        <footer className="private-footer">
-          <ul>
+        <footer>
+          <ul className="private-ul">
             <li>
               <a href="/private/posts/add">
                 <img src="/images/new.png" alt="New post icon" />

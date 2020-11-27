@@ -6,11 +6,11 @@ function Login(props) {
     <Layout title="Login">
       <header>
         <a href="/">
-          <img src='/images/main-logo.png' />
+          <img className="logo-login" src='/images/main-logo.png' />
         </a>
       </header>
 
-      <h1>Login</h1>
+      <h1 className="login-title">Login</h1>
       <br/>
       <form id="form-login" action="/auth/login" method="POST">
         <label>Email: </label>
@@ -30,8 +30,8 @@ function Login(props) {
         {props.errorMessage ? (
           <div className="error-message">{props.errorMessage}</div>
         ) : null}
-        <p className="account-message">
-          Don't you have an account yet? <a href="/auth/signup">Sign up</a>
+        <p className="account-message-login">
+          Don't you have an account yet? <a className="signup-link"href="/auth/signup">Sign up</a>
         </p>
       </form>
     </Layout>

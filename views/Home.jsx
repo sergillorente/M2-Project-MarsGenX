@@ -4,7 +4,7 @@ const Layout = require("./Layout");
 function Home() {
   return (
     <Layout title="Home">
-      <header>
+      <header className="header-home">
         <img src='/images/main-logo.png' className="home-logo"/>
       </header>
 
