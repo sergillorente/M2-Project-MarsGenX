@@ -18,9 +18,10 @@ function AddPost(props) {
                 <div>
                     <div>
                         <hr />
-                        <h1>Community Posts</h1>
+                        <h1 className = "pageTitle">Community Posts</h1>
                     </div>
-
+                    <br/>
+                    <br/>
                     <form id="add-post-form" action="/private/posts/add" method="POST" encType="multipart/form-data">
                         <input type="text" name="title" placeholder="Title" />
                         <br />

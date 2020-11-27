@@ -23,20 +23,36 @@ function Member(props) {
       </header>
 
       <main className= "textColor">
-        <h1>Member Page</h1>
+
+      <br/>
+              <br/>
+
+        <h1 className = "pageTitle">Member Page</h1>
+        
+
+        <br/>
+        <br/>
+
+
         {props.allPosts.map((post, i) => {
           return (
             <div className="article">
               <div>
-                <h3>{post.title}</h3>
+                <h3 className = "pageTitle">{post.title}</h3>
+                <br/>
+                <br/>
                 <p>{post.text}</p>
+                <br/>
+                <br/>
                 <img src={post.image} />
               </div>
 
-              <h4> Comment</h4>
+              
               {/*We need to create an action to allow this button to dropdown the form*/}
 
-              <form
+
+                
+              <form className= "centeredForm"
                 id="article-form"
                 action={`/private/posts/comment/${post._id}`}
                 method="POST"
@@ -47,38 +63,58 @@ function Member(props) {
                 {/* Button to submit the text you have written in the comment.*/}
               </form>
 
+              <br/>
+              <br/>
+
+
               {/*map of the comments that return the comment with the title */}
 
               {post.comments.map((commentObj) => {
                 return (
                   <div>
                     <p>{commentObj.member.email}</p>
+                    <br/>
+                    <br/>
                     <p>{commentObj.comment}</p>
                   </div>
                 );
               })}
 
+
+    
+
               {String(props.member._id) === String(post.creator) ? (
-                <a href={`/private/updatepost/${post._id}`}>
+                <a className= "centeredForm" href={`/private/updatepost/${post._id}`}>
                   <button> Edit</button>
                 </a>
               ) : null}
+              <br/>
+                <br/>
 
-
-              <form action={`/private/deletepost/${post._id}`} method="GET">
+              <form className= "centeredForm" action={`/private/deletepost/${post._id}`} method="GET">
                 <button>Delete</button>
               </form>
+             
+
+              <br/>
+                <br/>
 
             </div>
           );
         })}
-        <form action={'/private/posts/add/'} method="GET" >
+        <form className= "centeredForm" action={'/private/posts/add/'} method="GET" >
           <button>Add New Post</button>
         </form>
+
+        <br/>
+        <br/>
 
         <a href="/auth/logout">
           <button>Log out</button>
         </a>
+
+
+
 
         <footer>
           <ul className="private-ul">

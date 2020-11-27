@@ -15,21 +15,24 @@ function Profile(props) {
         </div>
       </header>
 
+      <br/>
       <main className= "textColor">
-      <h1>Profile settings</h1>
-      <form id="form-setting" action="/private/editprofile" method="POST" encType="multipart/form-data">
+      <h1 className = "pageTitle">Profile settings</h1>
 
-        <label>Username:</label>
+      <br/>
+      <form className= "centeredForm" id="form-setting" action="/private/editprofile" method="POST" encType="multipart/form-data">
+
+        <label className= "otherText">Username:</label>
         <br />
         <input type="text" name="username" defaultValue={props.member.username} placeholder="Type in here" />
         <br />
 
-        <label>Greetings:</label>
+        <label className= "otherText">Greetings:</label>
         <br />
         <input type='text' name="greetings" defaultValue={props.member.greetings} placeholder="Choose your greeting" />
         <br />
 
-        <label>Profile picture:</label>
+        <label className= "otherText">Profile picture:</label>
         <br />
         <img src={props.member.image} />
         <br />

@@ -16,10 +16,16 @@ function Donation(props) {
         </div>
       </header>
 
-      <main className= "textColor">
-        <h1>Donation Page</h1>
+      <br/>
+<br/>
 
-        <form id="donation-form" action="donation" method="POST">
+      <main className= "textColor">
+        <h1 className = "pageTitle">Donation Page</h1>
+
+<br/>
+<br/>
+
+        <form className= "centeredForm" id="donation-form" action="donation" method="POST">
           <label>Your donation:</label>
           <br />
           <input type="text" name="points" placeholder="1€ = 10pts"></input>
@@ -32,7 +38,7 @@ function Donation(props) {
             : null
         }
 
-        <a href="/auth/logout">
+        <a className= "donLogout" href="/auth/logout">
           <button>Log out</button>
         </a>
 
